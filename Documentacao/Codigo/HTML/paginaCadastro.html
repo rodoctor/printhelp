@@ -6,82 +6,91 @@
 	<body>
 		<form>
 
-		<label name="field_menu">
-			<fieldset>
-				<legend>
-					Menu
-				</legend>
-				<ul>
-					<li>Cadastro de Cliente</li>
-					<li>Cadastro de Funcionário</li>
-					<li>Cadastro de Impressora</li>
-					<li>Administração de O.S.</li>
-					<li>Relatório de O.S.</li>
-				</ul>
-			</fieldset><br>
-		</label>
-			
-		<label name="field_cadastro">
-			<fieldset>
-				<legend>
-					Cadastro de Cliente</legend>
-				<label name="txt_cliCadastrados">
-					<b>Clientes Cadastrados</b><br>
-					<select>
-						<option>Opção 1</option>
-						<option>Opção 2</option>
-					</select><br>
-				</label><br>
-
-		<label name="field_cliente">
-			<fieldset>
-				<legend>Cliente</legend>
-
-				<label name="txt_cliNome">
-					<b>Nome do Cliente</b><br>
-					<input type="text" name="txt_cliNome"/>
-
-				</label><br>
-
-				<!-- <label name="btn_cliCadastrar"></label> -->
-
-				<label name="txt_cliCnpj">
-					<b>CNPJ</b><br>
-					<input type="text" name="txt_cliCnpj"/>
-				</label><br>
-
-				<!-- <label name="btn_cliConsultar"></label> -->
-
-				<label name="txt_cliEndereco">
-					<b>Endereço</b><br>
-					<input type="text" name="txt_cliEndereco"/>
-				</label><br>
-
-				<!-- <label name="btn_cliAlterar"></label> -->
-
-				<label name="txt_cliTelefone">
-					<b>Telefone</b><br>
-					<input type="text" name="txt_cliTelefone"/>
-				</label> 
-				
-				<label name="txt_cliEmail">
-					&#09<b>Email</b>
-					<input type="text" name="txt_cliEmail"/>
-				</label><br>
-
-				<label name="txt_cliResponsavel">
-					<b>Responsável</b><br>
-					<input type="text" name="txt_cliResponsavel"/>
-				</label>
-
-				<!-- <label name="btn_cliExcluir"></label>	 -->
-			</fieldset>
+			<label name="field_menu">
+				<fieldset>
+					<legend>
+						Menu
+					</legend>
+					<ul>
+						<li>Cadastro de Cliente</li>
+						<li>Cadastro de Funcionário</li>
+						<li>Cadastro de Impressora</li>
+						<li>Administração de O.S.</li>
+						<li>Relatório de O.S.</li>
+					</ul>
+				</fieldset><br>
 			</label>
 				
+			<label name="field_cadastro">
+				<fieldset>
+					<legend>
+						Cadastro de Cliente</legend>
 						
-				
-			</fieldset><br>
-		</label>
+					<label name="txt_cliCadastrados">
+						<b>Clientes Cadastrados</b><br>
+						<select>
+							<option>Opção 1</option>
+							<option>Opção 2</option>
+						</select><br>
+					</label><br>
+
+				<label name="field_cliente">
+					<fieldset>
+						<legend>Cliente</legend>
+
+						<label name="txt_cliNome">
+							<b>Nome do Cliente</b><br>
+							<input type="text" name="txt_cliNome"/>
+						</label><br>
+
+						<label name="txt_cliCnpj">
+							<b>CNPJ</b><br>
+							<input type="text" name="txt_cliCnpj"/>
+						</label><br>
+
+						<label name="txt_cliEndereco">
+							<b>Endereço</b><br>
+							<input type="text" name="txt_cliEndereco"/>
+						</label><br>
+
+						<label name="txt_cliTelefone">
+							<b>Telefone</b><br>
+							<input type="text" name="txt_cliTelefone"/>
+						</label> 
+						
+						<label name="txt_cliEmail">
+							&#09<b>Email</b>
+							<input type="text" name="txt_cliEmail"/>
+						</label><br>
+
+						<label name="txt_cliResponsavel">
+							<b>Responsável</b><br>
+							<input type="text" name="txt_cliResponsavel"/><br>
+						</label><br>
+
+						<label name="btn_cliCadastrar">
+							<input type="button" name="cliCadastrar"onclick="alert('Hello World!')" value="Cadastrar Cliente">
+						</label><br>
+
+						<label name="btn_cliConsultar">
+							<input type="button" name="btn_cliConsultar" onclick="alert('Hello World!')" value="Consultar Cliente">
+						</label><br>
+
+						<label name="btn_cliAlterar">
+							<input type="button" name="btn_cliAlterar" onclick="alert('Hello World!')" value="Alterar Cliente">
+						</label><br>
+
+						<label name="btn_cliExcluir">
+							<input type="button" name="btn_cliExcluir" onclick="alert('Hello World!')" value="Excluir Cliente!">
+						</label><br>
+
+					</fieldset>
+				</label>
+						
+								
+						
+					</fieldset><br>
+				</label>
 
 		</form>
 		
