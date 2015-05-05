@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Cadastro de Clientes</title>
+	<meta charset="UTF-8"> 
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+
+<body>
+	<nav id="nav">
+		<div id="logo">
+			<!-- <figure id="img_logo">
+				<img src="img/logo_branco.png" alt="Logotipo PrintHelp">
+			</figure> -->
+			Logo
+		</div>
+	</nav>
+
+	<section id="section">
+		<div id="menu">
+			<ul>
+				<li>Cadastro de Cliente</li>
+				<li>Cadastro de Funcionário</li>
+				<li>Cadastro de Impressora</li>
+				<li>Administração de O.S.</li>
+				<li>Relatório de O.S.</li>
+			</ul>
+		</div>
+		
+		<div id="form">
+			<form>
+				<label name="field_cadastro">
+					<fieldset>
+						<legend>
+							Cadastro de Cliente</legend>
+							
+						<!-- Inicio Formulário Clientes -->
+						<label name="txt_cliCadastrados">
+							<b>Clientes Cadastrados</b><br>
+							<select>
+								<option>Opção 1</option>
+								<option>Opção 2</option>
+							</select><br>
+						</label><br>
+
+						<label name="field_cliente">
+							<fieldset>
+								<legend>Cliente</legend>
+
+								<label name="txt_cliNome">
+									<b>Nome do Cliente</b><br>
+									<input type="text" name="txt_cliNome"/>
+								</label><br>
+
+								<label name="txt_cliCnpj">
+									<b>CNPJ</b><br>
+									<input type="text" name="txt_cliCnpj"/>
+								</label><br>
+
+								<label name="txt_cliEndereco">
+									<b>Endereço</b><br>
+									<input type="text" name="txt_cliEndereco"/>
+								</label><br>
+
+								<label name="txt_cliTelefone">
+									<b>Telefone</b><br>
+									<input type="text" name="txt_cliTelefone"/>
+								</label><br>
+								
+								<label name="txt_cliEmail">
+									<b>Email</b><br>
+									<input type="text" name="txt_cliEmail"/>
+								</label><br>
+
+								<label name="txt_cliResponsavel">
+									<b>Responsável</b><br>
+									<input type="text" name="txt_cliResponsavel"/><br>
+								</label><br>
+
+								<label name="btn_cliCadastrar">
+									<input type="button" name="cliCadastrar"onclick="alert('Hello World!')" value="Cadastrar Cliente">
+								</label><br>
+
+								<label name="btn_cliConsultar">
+									<input type="button" name="btn_cliConsultar" onclick="alert('Hello World!')" value="Consultar Cliente">
+								</label><br>
+
+								<label name="btn_cliAlterar">
+									<input type="button" name="btn_cliAlterar" onclick="alert('Hello World!')" value="Alterar Cliente">
+								</label><br>
+
+								<label name="btn_cliExcluir">
+									<input type="button" name="btn_cliExcluir" onclick="alert('Hello World!')" value="Excluir Cliente!">
+								</label><br>
+
+							</fieldset>
+						</label>
+						<!-- Final de Formulário -->
+							
+						</fieldset><br>
+					</label>
+
+				</form>
+		</div>
+		
+	</section>
+		
+	<footer id="footer">
+		<div id="rodape">
+			Rodapé
+		</div>
+	</footer>
+</body>
+
+</html>
