@@ -1,9 +1,3 @@
-
-#section {
-	background-color: #000000
-
-}
-
 div#logo {
 	position: relative;
 	width: 100%;
@@ -15,7 +9,7 @@ div#logo {
 }
 
 div#menu {
-	width: 30%;
+	width: 20%;
 	height: 90%;
 	/*margin: 0px;*/
 	/*padding: 0px;*/
@@ -23,25 +17,27 @@ div#menu {
 	color: #ffffff;
 	background-color: #4D4D4D;
 	
+		
 }
 
-div#menu ul li {
-	/*margin: 0px; 
-	padding: 0px;*/
-	text-align: left;
-	list-style-type: none;
-	background-color: #4D4D4D;
-}
+	div#menu ul li{
+		/*margin: 0px; 
+		padding: 0px;*/
+		text-align: left;
+		list-style-type: none;
+		background-color: #4D4D4D;
+		
+	}
 
 div#form {
-	width: 70%;
+	width: 80%;
 	height: 90%;
 	margin: 0; 
 	padding: 0px;
 	float: right;
 	background-color: #ffffff;
 	vertical-align: right;
-}
+	}
 
 div#rodape {
 	width: 100%;
@@ -51,6 +47,7 @@ div#rodape {
 	text-align: center;
 	float: bottom;
 	background-color: #191919;
+	
 	clear: both;
 }
 
