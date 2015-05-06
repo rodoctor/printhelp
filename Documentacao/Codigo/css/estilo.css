@@ -1,53 +1,83 @@
-div#logo {
-	position: relative;
-	width: 100%;
-	height: 5%;
-	margin: 0; 
-	padding: 0px;
-	float: top;
-	background-color: #191919;
+﻿#site {
+width: 100%;
+height: 100%;
+background-color: blue;
+margin: 0; 
+padding: 0px;
+font-family: "Calibri", clean;
 }
 
-div#menu {
-	width: 20%;
-	height: 90%;
-	/*margin: 0px;*/
-	/*padding: 0px;*/
-	float: left;
-	color: #ffffff;
-	background-color: #4D4D4D;
+#topo {
+width: 100%;
+height: 15%;
+background-color: #191919;
+margin: 0; 
+padding: 0px;
+float: top;
+}
+
+#logo {
 	
-		
-}
-
-	div#menu ul li{
-		/*margin: 0px; 
-		padding: 0px;*/
-		text-align: left;
-		list-style-type: none;
-		background-color: #4D4D4D;
-		
 	}
 
-div#form {
-	width: 80%;
-	height: 90%;
+#conteudo {
+width: 100%;
+height: 80%;
+background-color: #FFFFFF;
+margin: 0; 
+padding: 0px;
+float: left;
+}
+
+	#menu {
+	width: 20%;
+	height: 100%;
+	background-color: #FFFFFF;
 	margin: 0; 
+	padding: 0px;
+	float: left;
+	}
+
+	#menu ul {
+		list-style-type:none;
+		margin: 5px; 
+		padding: 0px;
+		font-family: "Calibri", clean;
+		font-size: 15px;
+		line-height: 150%;
+
+	}
+
+	#menu ul li {
+		border-bottom: 1px solid #000000;
+	}
+
+	#menu ul li:hover {
+		border-bottom: 1px solid #000000;
+		background-color:#161616;
+		color: #FFFFFF;
+	}
+
+	#formulario_cliente {
+	width: 80%;
+	height: 100%;
+	background-color: #FFFFFF;
+	margin: 0px; 
 	padding: 0px;
 	float: right;
-	background-color: #ffffff;
-	vertical-align: right;
+	line-height: 150%;	
 	}
 
-div#rodape {
-	width: 100%;
-	height: 5%;
-	margin: 0; 
-	padding: 0px;
-	text-align: center;
-	float: bottom;
-	background-color: #191919;
-	
-	clear: both;
-}
 
+#rodape {
+width: 100%;
+height: 5%;
+background-color: #191919;
+margin: 0; 
+padding: 0px;
+float: bottom;
+text-align: center;
+font-size: 10px;
+color: #FFFFFF;
+clear: both;
+}
