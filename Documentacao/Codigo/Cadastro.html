@@ -4,8 +4,12 @@
 	<title>Cadastro de Clientes</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script type="text/javascript" src="js/valida.js"></script>
 </head>
+
 <body>
+
+<!-- Script -->
 	<div id="site">
 
 		<header>
@@ -33,7 +37,7 @@
 
 				<div id="formulario_cliente">
 					<!-- Inicio Formulário -->
-					<form>
+					<form id="formCliente">
 						<fieldset>
 							<legend>
 								Cadastro de Cliente</legend>
@@ -96,6 +100,12 @@
 									<label name="btn_cliExcluir">
 										<input type="button" name="btn_cliExcluir" onclick="alert('Hello World!')" value="Excluir Cliente!">
 									</label>
+
+									<!-- BOTAO TESTE SUBMIT -->
+										<button name="btn_Validar" id="btn_Validar" onclick="validar('txt_cliNome')">Validar!</button><!-- Somente testando o nome -->
+									<!-- FINAL BTN TESTES -->
+
+
 		<!-- FINAL DE BOTÕES ==========================================-->
 
 
