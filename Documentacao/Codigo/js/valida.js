@@ -1,4 +1,4 @@
-﻿function validar(txt_cliNome) {
+function validar(txt_cliNome) {
 var txt_cliNome = formCliente.txt_cliNome.value;
 var txt_cliCnpj = formCliente.txt_cliCnpj.value;
 
@@ -62,5 +62,6 @@ return false;
 
 //==============txt_cliResponsavel===============
 //===============================================
+
 }
 
