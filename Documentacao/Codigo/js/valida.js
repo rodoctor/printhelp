@@ -1,66 +1,100 @@
-function validar(txt_cliNome) {
-var txt_cliNome = formCliente.txt_cliNome.value;
-var txt_cliCnpj = formCliente.txt_cliCnpj.value;
+function validar() {
+var formulario = document.getElementById("formulario");
+var nome = formulario.nome.value;
+var cnpj = +formulario.cnpj.value;
+var endereco = formulario.endereco.value;
+var telefone = +formulario.telefone.value;
 
-//======================cliNome==================
-if (txt_cliNome == "") {
+//======================NOME==================
+if (nome == "") {
 alert('Campo NOME DO CLIENTE Obrigatório');
-// formCliente.txt_cliNome.focus();
-documento.formCliente.txt_cliNome.style.background = 'red';
+formulario.nome.focus();
 return false;
 }
 
-if (txt_cliNome.length < 5) {
+if (nome.length < 5) {
 alert('Digite seu nome completo');
-formCliente.txt_cliNome.focus();
+formulario.nome.focus();
 return false;
 }
 
-if (txt_cliNome.length > 80) {
+if (nome.length > 80) {
 alert('Campo NOME DO CLIENTE deve ter no máximo 80 caracteres');
-// formCliente.txt_cliNome.focus();
+formulario.nome.focus();
 return false;
 }
 
 //===============================================
 
 
-//===================txt_cliCNPJ=================
-// if (txt_cliCnpj == "") {
-// alert('Campo CNPJ Obrigatório');
-// formCliente.txt_cliCNPJ.focus();
-// return false;
-// }
+//===================CNPJ=================
+if (cnpj == "") {
+alert('Campo CNPJ Obrigatório');
+formulario.cnpj.focus();
+return false;
+}
 
-// if (txt_cliCnpj.length <> 11) {
-// alert('O campo CNPJ deve conter 11 caracteres');
-// formCliente.txt_cliCnpj.focus();
-// return false;
-// }
+if (typeof cnpj != 'number') {
+alert('Você não digitou um número');
+formulario.cnpj.focus();
+return false;
+}
 
-// if (isNaN(formCliente.txt_cliCNPJ)) { 
-// alert('Você não digitou um número');
-// formCliente.txt_cliCnpj.focus();
-// return false;
-// } 
-
-
+if (cnpj.length == 11) {
+alert('O campo CNPJ deve conter 11 caracteres');
+formulario.cnpj.focus();
+return false;
+}
 //===============================================
 
 
-//==============txt_cliEndereco==================
+//==============ENDERECO==================
+if (endereco == "") {
+alert('Campo ENDEREÇO Obrigatório');
+formulario.endereco.focus();
+return false;
+}
+
+if (endereco.length < 5) {
+alert('Digite o endereço completo');
+formulario.endereco.focus();
+return false;
+}
+
+if (endereco.length > 80) {
+alert('Campo ENDEREÇO deve ter no máximo 80 caracteres');
+formulario.endereco.focus();
+return false;
+}
 //===============================================
 
 
-//==============txt_cliTelefone==================
+//==============TELEFONE==================
+if (telefone == "") {
+alert('Campo TELEFONE Obrigatório');
+formulario.telefone.focus();
+return false;
+}
+
+if (typeof telefone != 'number') {
+alert('Você não digitou um número de telefone');
+formulario.telefone.focus();
+return false;
+}
+
+if (telefone.length <= 11) {
+alert('O campo TELEFONE deve conter no máximo 11 caracteres');
+formulario.telefone.focus();
+return false;
+}
 //===============================================
 
 
-//==================txt_cliEmail=================
+//==================EMAIL=================
 //===============================================
 
 
-//==============txt_cliResponsavel===============
+//==============RESPONSAVEL===============
 //===============================================
 
 }

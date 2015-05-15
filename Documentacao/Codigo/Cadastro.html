@@ -34,76 +34,75 @@
 				</ul>
 			</nav>
 
-			<div id="formulario">
+			<div id="divFormulario">
 				<!-- Inicio Formulário -->
-				<form id="formCliente">
+				<form id="formulario">
 					<fieldset>
 						<legend>Cadastro de Cliente</legend>
 							
 						<label name="txt_cliCadastrados">
-							<b>Clientes Cadastrados</b><br>
+							Clientes Cadastrados</label><br>
 							<select>
 								<option>Opção 1</option>
 								<option>Opção 2</option>
-							</select><br>
-						</label><br>
+							</select><br><br>
 
 							<fieldset>
 								<legend>Cliente</legend>
 
 									<label name="Nome">
-									<b>Nome do Cliente</b><br>
-									<input type="text" name="Nome"/>
+									<b>Nome do Cliente</b></label><br>
+									<input type="text" id="nome" name="Nome"/>
 									</label><br>
 
 									<label name="Cnpj">
 										<b>CNPJ</b><br>
-										<input type="text" name="Cnpj"/>
+										<input type="text" id="cnpj" name="Cnpj"/>
 									</label><br>
 
 									<label name="Endereco">
 										<b>Endereço</b><br>
-										<input type="text" name="Endereco"/>
+										<input type="text" id="endereco" name="Endereco"/>
 									</label><br>
 
 									<label name="Telefone">
 										<b>Telefone</b><br>
-										<input type="text" name="Telefone"/>
+										<input type="text" id="telefone" name="Telefone"/>
 									</label><br>
 									
 									<label name="Email">
 										<b>Email</b><br>
-										<input type="text" name="Email"/>
+										<input type="text" id="email" name="Email"/>
 									</label><br>
 
 									<label name="Responsavel">
 										<b>Responsável</b><br>
-										<input type="text" name="Responsavel"/><br>
+										<input type="text" id="responsavel" name="Responsavel"/><br>
 									</label><br>
 									
 										
 		<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
 									<br>
 									
-									<input type="button" name="cliCadastrar"onclick="alert('Hello World!')" value="Cadastrar Cliente">
+									<input type="button" name="Cadastrar"onclick="alert('Hello World!');" value="Cadastrar Cliente">
 		
 									<br>
 
 									
-									<input type="button" name="btn_cliConsultar" onclick="alert('Hello World!')" value="Consultar Cliente">
+									<input type="button" name="Consultar" onclick="alert('Hello World!');" value="Consultar Cliente">
 									
 									<br>
 
-									<input type="button" name="btn_cliAlterar" onclick="alert('Hello World!')" value="Alterar Cliente">
+									<input type="button" name="Alterar" onclick="alert('Hello World!');" value="Alterar Cliente">
 									
 									<br>
 
-									<input type="button" name="btn_cliExcluir" onclick="alert('Hello World!')" value="Excluir Cliente!">
+									<input type="button" name="Excluir" onclick="alert('Hello World!');" value="Excluir Cliente!">
 									
 									<br>
 
 									<!-- BOTAO TESTE SUBMIT -->
-									<button name="btn_Validar" id="btn_Validar" onclick="validar('txt_cliNome, txt_cliCNPJ')">Validar!</button><!-- Somente testando o nome -->
+									<button name="Validar" id="btn_Validar" onclick="validar();">Validar!</button><!-- Somente testando o nome -->
 									<!-- FINAL BTN TESTES -->
 
 		<!-- FINAL DE BOTÕES ==========================================-->
