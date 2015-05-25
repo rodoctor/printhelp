@@ -171,7 +171,7 @@ function fCodigo() {
 	}
 
 	if (isNaN(codigo)) {
-		alert('Digite somente números');
+		alert('Digite somente números no campo CODIGO');
 		formulario.codigo.focus();
 		return false;
 	}
@@ -183,7 +183,7 @@ function fCodigo() {
 //=================SENHA=============================
 function fSenha() {
 	var formulario = window.document.getElementById("formulario");
-	var filtro = /^[\w]/;
+	var filtro = /[\w][\d]/;
 	var senha = formulario.senha.value;
 
 	if (senha == "") {
@@ -192,16 +192,47 @@ function fSenha() {
 	return false;
 	}
 
-	if (!filtro.test(senha.value)) {
+	if (!filtro.test(senha)) {
 	alert('A senha deve conter carateres alfanumericos, com no minimo 8 caracteres');
 	senha.focus();
 	return false
 	}
 
-	if (senha.length >= 8) {
+	if (senha.length < 8) {
 	alert('A senha deve conter carateres alfanumericos, com no minimo 8 caracteres');
 	formulario.senha.focus();
 	return false;
 	}
 }
+//===================================================
+
+
+
+//================NUMERO_DE_SERIE====================
+function fSerie() {
+	var formulario = window.document.getElementById("formulario");
+	var serie = formulario.serie.value;
+
+	if (serie == "") {
+	alert('Campo NUMERO DE SERIE Obrigatório');
+	formulario.serie.focus();
+	return false;
+	}
+}
+
+//===================================================
+
+
+//================NUMERO=DE=SERIE====================
+function fMarca() {
+	var formulario = window.document.getElementById("formulario");
+	var marca = formulario.marca.value;
+
+	if (marca == "") {
+	alert('Campo NUMERO DE SERIE Obrigatório');
+	formulario.marca.focus();
+	return false;
+	}
+}
+
 //===================================================
