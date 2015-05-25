@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Administração de O.S.</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<link rel="stylesheet" type="text/css" href="css/botoes.css" />
+	<script type="text/javascript" src="js/valida.js"></script>
+</head>
+
+<body>
+
+	<div id="site">
+
+		<!-- === CABEÇALHO === -->
+		<header>
+			<div id="topo">
+					<figure id="logo">
+						<img src="img/logo_branco.png" alt="Logotipo PrintHelp">
+					</figure>
+			</div>
+		</header>
+
+		<section id="conteudo">
+			
+			<!-- Menu Lateral -->
+			<nav id="menu">
+				<ul>
+					<li><a href="cliente.html">Cadastro de Cliente</a></li>
+					<li><a href="funcionario.html">Cadastro de Funcionário</a></li>
+					<li><a href="impressora.html">Cadastro de Impressora</a></li>
+					<li><a href="os.html">Administração de O.S.</a></li>
+					<li><a href="relatorio.html">Relatório de O.S.</a></li>
+					<li><a href="index.html">Sair</a></li>
+				</ul>
+			</nav>
+
+			<div id="divFormulario">
+				<!-- Inicio Formulário -->
+				<form id="formulario">
+
+							<input type="button" id="abrir" onclick="window.location='abrirOS.html'" value="Abrir O.S."><br>
+							
+							<label for="cliente">
+							Cliente</label><br>
+							<select id="cliente" name="cliente">
+								<option>Opção 1</option>
+								<option>Opção 2</option>
+							</select><br>
+
+							<label for="impressora">Impressora</label><br>
+							<select id="impressora" name="impressora">
+								<option>Opção 1</option>
+								<option>Opção 2</option>
+							</select><br>
+
+						
+							<label for="problema">Problema</label><br>
+							<select id="problema" name="problema">
+								<option>Opção 1</option>
+								<option>Opção 2</option>
+							</select><br>
+
+							<label name="descricao">
+								<b>Descrição</b><br>
+								<input type="text" id="descricao" name="descricao"/>
+							</label><br>
+
+																
+										
+		<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
+									<br>
+									
+									<input type="button" name="Cadastrar"onclick="alert('Hello World!');" value="Cadastrar">
+		
+									<br>
+
+									
+									<input type="button" name="Consultar" onclick="alert('Hello World!');" value="Consultar">
+									
+									<br>
+
+									<input type="button" name="Alterar" onclick="alert('Hello World!');" value="Alterar">
+									
+									<br>
+
+									<input type="button" name="Excluir" onclick="alert('Hello World!');" value="Excluir">
+									
+									<br>
+
+									<!-- BOTAO TESTE SUBMIT -->
+									<input type="button" value="Validar" id="validar" onclick="validar();">
+									<!-- FINAL BTN TESTES -->
+
+		<!-- FINAL DE BOTÕES =====================================-->
+				</form>
+			</div> <!--Final div Formulário-->
+		</section> <!-- Final #Conteudo -->
+
+		<footer id="rodape">
+			<p>Equipe PrintHelp de Desenvolvimento  - 2015</p>
+		</footer>
+
+	</div>
+</body>
+</html>

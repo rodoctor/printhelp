@@ -1,42 +1,54 @@
-﻿#site {
-width: 100%;
-height: 100%;
-background-color: blue;
-margin: 0; 
-padding: 0px;
-font-family: "Calibri", clean;
+#site {
+	width: 900px;
+	background-color: #ffffff;
+	margin: 0px auto 0px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	padding: 10px;
+	border-radius: 10px;
 }
 
 #topo {
-width: 100%;
-height: 10%;
-background-color: #191919;
-margin: 0; 
-padding: 0px;
-float: left;
+	border-radius: 10px;
+	border: 1px solid;
+	height: 150px;
+	background-color: #606060;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.5);
 }
 
 #logo {
-	text-align: right;
+	text-align: center;
 	vertical-align: middle;
 	}
 
 #conteudo {
-width: 100%;
-height: 80%;
-background-color: #FFFFFF;
-margin: 0; 
-padding: 0px;
-float: left;
+	display: block;
+	width: 880px;
+	float: right;
+	padding-right: 15px;
+}
+
+nav#menu a {
+	color: #000000;
+	text-decoration: none;
+}
+
+nav#menu a:hover{
+		color: #FFFFFF;
 }
 
 	#menu {
-	width: 20%;
-	height: 100%;
-	background-color: #FFFFFF;
-	margin: 0; 
-	padding: 0px;
+	position: relative;
+	display: block;
+	width: 160px;
 	float: left;
+	left: -5px;
+	background-color: #ffffff;
+	padding: 10px 10px 290px 10px;
+	margin-top: 10px;
+	margin-right: 0px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+	border-radius: 10px;
+	border: 1px solid;
 	}
 
 	#menu ul {
@@ -53,64 +65,49 @@ float: left;
 		border-bottom: 1px solid #000000;
 	}
 
-	#menu ul li:hover {
+	#menu li:hover {
 		border-bottom: 1px solid #000000;
-		background-color:#161616;
 		color: #FFFFFF;
+		background-color:#606060;
+		
+	}
+	
+	#divFormulario {
+
+		background-color: #FFFFFF;
+		position: relative;;
+		display: block;
+		width: 670px;
+		float: right;
+		left: 20px;
+		border-radius: 10px;
+		border: 1px solid;
+		margin: 10px 10px 10px -30px;
+		box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+		padding: 10px;
 	}
 
-	#formulario_cliente {
-	width: 80%;
-	height: 100%;
-	background-color: #FFFFFF;
-	margin: 0px; 
-	padding: 0px;
-	float: right;
-	line-height: 150%;	
+	form#formulario{
 	}
 
-/*	#fieldCliente {
-	width: 100%;
-	height: 100%;
-
+/*    #fieldCliente {
+		border-radius: 10px;
 	}
-
 	#fieldCliente1 {
-		width: 50%;
-		height: 100%;
-		float: left;
-	}*/
-/*	#fieldCliente2 {
-		width: 50%;
-		height: 100%;
-		float: left;
-		line-height: 250%;
-		text-align: right;
+		border-radius: 10px;
 	}*/
 
-/*FORMATAÇÃO DOS BOTOES*/
-	input[type=button]{
-		width: 150px;
-	}
-
-	button{
-		width: 150px;
-	}
-/*FINAL FORMATAÇÃO BOTOES*/
 
 
 
 #rodape {
-width: 100%;
-height: 5%;
-background-color: #191919;
-margin: 0; 
-padding: 0px;
-float: bottom;
-text-align: center;
-font-size: 10px;
-color: #FFFFFF;
-clear: both;
+	clear: both;
+	border-radius: 10px;
+	border: 1px solid;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+
 }
 
-
+footer#rodape p {
+	text-align: center;
+}

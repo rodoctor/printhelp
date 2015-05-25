@@ -1,101 +1,207 @@
-function validar() {
-var formulario = document.getElementById("formulario");
-var nome = formulario.nome.value;
-var cnpj = +formulario.cnpj.value;
-var endereco = formulario.endereco.value;
-var telefone = +formulario.telefone.value;
+﻿
+//==============NOME==================================
+function fNome() {
+	var formulario = window.document.getElementById("formulario");
+	var nome = formulario.nome.value;
 
-//======================NOME==================
-if (nome == "") {
-alert('Campo NOME DO CLIENTE Obrigatório');
-formulario.nome.focus();
-return false;
+	if (nome == "") {
+	alert('Campo NOME DO CLIENTE Obrigatório');
+	formulario.nome.focus();
+	return false;
+	}
+
+	if (nome.length < 5) {
+	alert('Digite seu nome completo');
+	formulario.nome.focus();
+	return false;
+	}
+
+	if (nome.length > 80) {
+	alert('Campo NOME DO CLIENTE deve ter no máximo 80 caracteres');
+	formulario.nome.focus();
+	return false;
+	}
+}
+//====================================================
+
+
+//==============CNPJ==================================
+function fCnpj() {
+	var formulario = window.document.getElementById("formulario");
+	var cnpj = +formulario.cnpj.value;
+
+	if (cnpj == "") {
+	alert('Campo CNPJ Obrigatório');
+	formulario.cnpj.focus();
+	return false;
+	}
+
+	if (isNaN(cnpj)) {
+	alert('Você não digitou um número');
+	formulario.cnpj.focus();
+	return false;
+	}
+
+	if (cnpj.toString().length != 11) {
+	alert('O campo CNPJ deve conter 11 caracteres');
+	formulario.cnpj.focus();
+	return false;
+	}
+}
+//====================================================
+
+
+//==============ENDEREÇO==============================
+function fEndereco() {
+	var formulario = window.document.getElementById("formulario");
+	var endereco = formulario.endereco.value;
+
+	if (endereco == "") {
+	alert('Campo ENDEREÇO Obrigatório');
+	formulario.endereco.focus();
+	return false;
+	}
+
+	if (endereco.length < 5) {
+	alert('Digite o endereço completo');
+	formulario.endereco.focus();
+	return false;
+	}
+
+	if (endereco.length > 80) {
+	alert('Campo ENDEREÇO deve ter no máximo 80 caracteres');
+	formulario.endereco.focus();
+	return false;
+	}
+}
+//====================================================
+
+
+//==============TELEFONE==============================
+function fTelefone() {
+	var formulario = window.document.getElementById("formulario");
+	var telefone = +formulario.telefone.value;
+
+	if (telefone == "") {
+	alert('Campo TELEFONE Obrigatório');
+	formulario.telefone.focus();
+	return false;
+	}
+
+	if (isNaN(telefone)) {
+	alert('Você não digitou um número de telefone');
+	formulario.telefone.focus();
+	return false;
+	}
+
+	if (telefone.length <= 11) {
+	alert('O campo TELEFONE deve conter no máximo 11 caracteres');
+	formulario.telefone.focus();
+	return false;
+	}
+}
+//====================================================
+
+
+//==============EMAIL=================================
+function fEmail() {
+	var formulario = window.document.getElementById("formulario");
+	var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	var email = formulario.email.value;
+
+	if (email == "") {
+	alert('Campo EMAIL Obrigatório');
+	formulario.email.focus();
+	return false;
+	}
+
+	if (!filtro.test(document.getElementById("email").value)) {
+	alert('Por favor, digite o email corretamente');
+	document.getElementById("email").focus();
+	return false
+	}
+}
+//====================================================
+
+
+//==============RESPONSAVEL===========================
+function fResponsavel() {
+	var formulario = window.document.getElementById("formulario");
+	var responsavel = formulario.responsavel.value;
+	
+	if (responsavel == "") {
+	alert('Campo RESPONSAVEL Obrigatório');
+	formulario.responsavel.focus();
+	return false;
+	}
+}
+//====================================================
+
+
+//================DESCRIÇÃO===========================
+function fDescricao() {
+	var formulario = window.document.getElementById("formulario");
+	var descricao = formulario.descricao.value;
+
+	if (descricao == "") {
+		alert('Campo DESCRIÇÃO obrigatório');
+		formulario.descricao.focus();
+		return false;
+	}
+
+	if (descricao.length < 20 ) {
+		alert('Descrição menor que 20 caracteres. Por favor digite a descrição completa');
+		formulario.descricao.focus();
+		return false;
+	}
+
+}
+//====================================================
+
+
+//================CODIGO==============================
+function fCodigo() {
+	var formulario = window.document.getElementById("formulario");
+	var codigo = +formulario.codigo.value;
+
+	if (codigo == "") {
+		alert('Campo CODIGO obrigatório');
+		formulario.codigo.focus();
+		return false;
+	}
+
+	if (isNaN(codigo)) {
+		alert('Digite somente números');
+		formulario.codigo.focus();
+		return false;
+	}
 }
 
-if (nome.length < 5) {
-alert('Digite seu nome completo');
-formulario.nome.focus();
-return false;
+//===================================================
+
+
+//=================SENHA=============================
+function fSenha() {
+	var formulario = window.document.getElementById("formulario");
+	var filtro = /^[\w]/;
+	var senha = formulario.senha.value;
+
+	if (senha == "") {
+	alert('Campo SENHA Obrigatório');
+	formulario.senha.focus();
+	return false;
+	}
+
+	if (!filtro.test(senha.value)) {
+	alert('A senha deve conter carateres alfanumericos, com no minimo 8 caracteres');
+	senha.focus();
+	return false
+	}
+
+	if (senha.length >= 8) {
+	alert('A senha deve conter carateres alfanumericos, com no minimo 8 caracteres');
+	formulario.senha.focus();
+	return false;
+	}
 }
-
-if (nome.length > 80) {
-alert('Campo NOME DO CLIENTE deve ter no máximo 80 caracteres');
-formulario.nome.focus();
-return false;
-}
-
-//===============================================
-
-
-//===================CNPJ=================
-if (cnpj == "") {
-alert('Campo CNPJ Obrigatório');
-formulario.cnpj.focus();
-return false;
-}
-
-if (typeof cnpj != 'number') {
-alert('Você não digitou um número');
-formulario.cnpj.focus();
-return false;
-}
-
-if (cnpj.length == 11) {
-alert('O campo CNPJ deve conter 11 caracteres');
-formulario.cnpj.focus();
-return false;
-}
-//===============================================
-
-
-//==============ENDERECO==================
-if (endereco == "") {
-alert('Campo ENDEREÇO Obrigatório');
-formulario.endereco.focus();
-return false;
-}
-
-if (endereco.length < 5) {
-alert('Digite o endereço completo');
-formulario.endereco.focus();
-return false;
-}
-
-if (endereco.length > 80) {
-alert('Campo ENDEREÇO deve ter no máximo 80 caracteres');
-formulario.endereco.focus();
-return false;
-}
-//===============================================
-
-
-//==============TELEFONE==================
-if (telefone == "") {
-alert('Campo TELEFONE Obrigatório');
-formulario.telefone.focus();
-return false;
-}
-
-if (typeof telefone != 'number') {
-alert('Você não digitou um número de telefone');
-formulario.telefone.focus();
-return false;
-}
-
-if (telefone.length <= 11) {
-alert('O campo TELEFONE deve conter no máximo 11 caracteres');
-formulario.telefone.focus();
-return false;
-}
-//===============================================
-
-
-//==================EMAIL=================
-//===============================================
-
-
-//==============RESPONSAVEL===============
-//===============================================
-
-}
-
+//===================================================
