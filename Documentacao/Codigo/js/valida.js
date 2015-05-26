@@ -1,11 +1,10 @@
-﻿
 //==============NOME==================================
 function fNome() {
 	var formulario = window.document.getElementById("formulario");
 	var nome = formulario.nome.value;
 
 	if (nome == "") {
-	alert('Campo NOME DO CLIENTE Obrigatório');
+	alert('Campo NOME Obrigatório');
 	formulario.nome.focus();
 	return false;
 	}
@@ -223,16 +222,59 @@ function fSerie() {
 //===================================================
 
 
-//================NUMERO=DE=SERIE====================
+//================MARCA_DA_IMPRESSORA================
 function fMarca() {
 	var formulario = window.document.getElementById("formulario");
 	var marca = formulario.marca.value;
 
 	if (marca == "") {
-	alert('Campo NUMERO DE SERIE Obrigatório');
+	alert('Campo MARCA DA IMPRESSORA Obrigatório');
 	formulario.marca.focus();
 	return false;
 	}
 }
-
 //===================================================
+
+
+//================MODELO_DA_IMPRESSORA===============
+function fModelo() {
+	var formulario = window.document.getElementById("formulario");
+	var modelo = formulario.modelo.value;
+
+	if (modelo == "") {
+	alert('Campo MODELO DA IMPRESSORA Obrigatório');
+	formulario.modelo.focus();
+	return false;
+	}
+}
+//===================================================
+
+
+//=================NUMERO_DE_OS======================
+function fOs() {
+	var formulario = window.document.getElementById("formulario");
+	var os = formulario.os.value;
+
+	if (os == "") {
+	alert('Campo NUMERO DE OS Obrigatório');
+	formulario.os.focus();
+	return false;
+
+}
+//===================================================
+
+
+
+//**************INDICE****************
+//fNome();
+//fCnpj();
+//fEndereco();
+//fTelefone();
+//fEmail();
+//fResponsavel();
+//fDescricao();
+//fCodigo();
+//fSenha();
+//fSerie();
+//fMarca();
+//fModelo();
