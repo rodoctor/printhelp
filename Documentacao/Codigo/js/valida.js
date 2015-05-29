@@ -207,7 +207,7 @@ function fSenha() {
 
 
 
-//================NUMERO_DE_SERIE====================
+//================NUMERODESERIE====================
 function fSerie() {
 	var formulario = window.document.getElementById("formulario");
 	var serie = formulario.serie.value;
@@ -222,7 +222,7 @@ function fSerie() {
 //===================================================
 
 
-//================MARCA_DA_IMPRESSORA================
+//================MARCADAIMPRESSORA================
 function fMarca() {
 	var formulario = window.document.getElementById("formulario");
 	var marca = formulario.marca.value;
@@ -236,7 +236,7 @@ function fMarca() {
 //===================================================
 
 
-//================MODELO_DA_IMPRESSORA===============
+//================MODELODAIMPRESSORA===============
 function fModelo() {
 	var formulario = window.document.getElementById("formulario");
 	var modelo = formulario.modelo.value;
@@ -250,11 +250,11 @@ function fModelo() {
 //===================================================
 
 
-//=================NUMERO_DE_OS======================
-function fOs() {
+//=================NUMERODEOS======================
+function fRelOs() {
 	var formulario = window.document.getElementById("formulario");
 	var os = formulario.os.value;
-
+alert(os);
 	if (os == "") {
 	alert('Campo NUMERO DE OS Obrigatório');
 	formulario.os.focus();
@@ -264,17 +264,3 @@ function fOs() {
 //===================================================
 
 
-
-//**************INDICE****************
-//fNome();
-//fCnpj();
-//fEndereco();
-//fTelefone();
-//fEmail();
-//fResponsavel();
-//fDescricao();
-//fCodigo();
-//fSenha();
-//fSerie();
-//fMarca();
-//fModelo();
