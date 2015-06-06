@@ -35,32 +35,32 @@ public class TestaInsere {
     	f.setSenha("admin");
     	dao.adiciona(f);*/
     	
-    	/*Impressora i = new Impressora();
+    	Impressora i = new Impressora();
     	ImpressoraDao dao = new ImpressoraDao();
-    	i.setNumeroSerie("729X001");
+    	i.setNumeroSerie("729X002");
     	i.setMarca("Lexmark");
     	i.setModelo("E460");
-    	dao.adiciona(i);*/
+    	dao.adiciona(i);
     	
-    	OrdemServico o = new OrdemServico();
+    	/*OrdemServico o = new OrdemServico();
     	OrdemServicoDao dao = new OrdemServicoDao();
     	o.setNumero(1);
     	o.setProblema("Papel atolado");
     	o.setDescricaoProblema("Papel atolou na porta de saída");
     	
-    	/*Calendar dta = Calendar.getInstance();
+    	Calendar dta = Calendar.getInstance();
     	DateFormat fdta = DateFormat.getDateInstance();
     	dta.set(2015, Calendar.JUNE, 04);
     	
-    	o.setDataAbertura(fdta.format(dta));*/
+    	o.setDataAbertura(fdta.format(dta));
     	o.setDataAbertura("2015-06-04");
     	o.setHoraAbertura(1630);
     	
-    	/*Calendar dtf = Calendar.getInstance();
+    	Calendar dtf = Calendar.getInstance();
     	DateFormat fdtf = DateFormat.getDateInstance();
     	dtf.set(2015, Calendar.JUNE, 04);
     	
-    	o.setDataFechamento(fdtf.format(dtf));*/
+    	o.setDataFechamento(fdtf.format(dtf));
     	o.setDataFechamento("2015-06-04");
     	o.setHoraFechamento(1700);
     	o.setSolucao("Retirado o papel");
@@ -68,7 +68,7 @@ public class TestaInsere {
     	o.setNumeroserie("7X20LB");
     	o.setCnpj(3478567733L);
     	o.setCod_funcionario(1);
-    	dao.adiciona(o);
+    	dao.adiciona(o);*/
     }
 }
 

@@ -28,18 +28,18 @@
 			<!-- Menu Lateral -->
 			<nav id="menu">
 				<ul>
-					<li><a href="cliente.html">Cadastro de Cliente</a></li>
-					<li><a href="funcionario.html">Cadastro de Funcionário</a></li>
-					<li><a href="impressora.html">Cadastro de Impressora</a></li>
-					<li><a href="os.html">Administração de O.S.</a></li>
-					<li><a href="relatorio.html">Relatório de O.S.</a></li>
-					<li><a href="index.html">Sair</a></li>
+					<li><a href="cliente.jsp">Cadastro de Cliente</a></li>
+					<li><a href="funcionario.jsp">Cadastro de Funcionário</a></li>
+					<li><a href="impressora.jsp">Cadastro de Impressora</a></li>
+					<li><a href="os.jsp">Administração de O.S.</a></li>
+					<li><a href="relatorio.jsp">Relatório de O.S.</a></li>
+					<li><a href="index.jsp">Sair</a></li>
 				</ul>
 			</nav>
 
 			<div id="divFormulario">
 				<!-- Inicio Formulário -->
-				<form id="formulario">
+				<form id="formulario" action="AdicionaImpressora?cmd=cadastrar" method="POST">
 							
 						<label name="impressorasCadastradas">
 							Impressoras Cadastradas</label><br>
@@ -68,7 +68,7 @@
 		<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
 									<br>
 									
-									<input type="button" name="Cadastrar"onclick="alert('Hello World!');" value="Cadastrar">
+									<input type="submit" name="Cadastrar"onclick="" value="Cadastrar">
 		
 									<br>
 
@@ -81,7 +81,7 @@
 									
 									<br>
 
-									<input type="button" name="Excluir" onclick="alert('Hello World!');" value="Excluir">
+									<input type="button" name="Excluir" onclick="document.location='RemoveImpressora'" value="Excluir">
 									
 									<br>
 

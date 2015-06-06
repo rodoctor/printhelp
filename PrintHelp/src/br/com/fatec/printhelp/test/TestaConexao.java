@@ -14,5 +14,6 @@ public class TestaConexao {
         c.close();
 
         System.out.println("conexão fechada");
+        
     }
 }

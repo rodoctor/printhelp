@@ -40,7 +40,7 @@
 
 			<div id="divFormulario">
 				<!-- Inicio Formulário -->
-				<form id="formulario">														
+				<form id="formulario" action="" method="POST">														
 									<label for="codigo">
 									<b>Codigo do Funcionario</b></label><br>
 									<input type="text" id="codigo" name="codigo"/>

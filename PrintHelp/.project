@@ -33,4 +33,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/img/logo_branco.png</name>
+			<type>1</type>
+			<location>C:/Users/Mr/Documents/GitHub/printhelp/Documentacao/Codigo/img/logo_branco.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>

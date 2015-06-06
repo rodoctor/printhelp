@@ -23,7 +23,10 @@ import java.util.List;
 	  } 
 	  
 	  public void adiciona(OrdemServico ordemServico) {//Metodo que adiciona registros no BD
-	    String sql = "insert into ordemServico " + "(numero,problema,descricaoProblema,dataAbertura,horaAbertura,dataFechamento,horaFechamento,solucaoProblema,tempoSla,numeroSerie,cnpj,cod_funcionario)" +  " values (?,?,?,?,?,?,?,?,?,?,?,?)";
+	    String sql = "insert into ordemServico "
+	    		+ "(numero,problema,descricaoProblema,dataAbertura,horaAbertura,dataFechamento,"
+	    		+ "horaFechamento,solucaoProblema,tempoSla,numeroSerie,cnpj,cod_funcionario)"
+	    		+  " values (?,?,?,?,?,?,?,?,?,?,?,?)";
 	    try {
 	        // prepared statement para inserção
 	        PreparedStatement stmt = connection.prepareStatement(sql);
@@ -85,7 +88,9 @@ import java.util.List;
 	      }*/
 	      
 	      public void altera(OrdemServico ordemServico){
-	        String sql = "update ordemServico set problema=?, descricaoProblema=?, dataAbertura=?, horaAbertura=?, dataFechamento=?, horaFechamento=?, solucaoProblema=?, tempoSla=?, numeroSerie=?, cnpj=?, cod_funcionario=? where numero=?";
+	        String sql = "update ordemServico set problema=?, descricaoProblema=?, dataAbertura=?,"
+	        		+ "horaAbertura=?, dataFechamento=?, horaFechamento=?, solucaoProblema=?,"
+	        		+ "tempoSla=?, numeroSerie=?, cnpj=?, cod_funcionario=? where numero=?";
 	        try {
 	            PreparedStatement stmt = connection.prepareStatement(sql);
 	            stmt.setString(1, ordemServico.getProblema());
