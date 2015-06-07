@@ -73,15 +73,15 @@
 									<br>
 
 									
-									<input type="button" name="Consultar" onclick="alert('Hello World!');" value="Consultar">
+									<input type="submit" name="Consultar" formaction="ConsultaImpressora" onclick="" value="Consultar">
 									
 									<br>
 
-									<input type="button" name="Alterar" onclick="alert('Hello World!');" value="Alterar">
+									<input type="submit" name="Alterar" formaction="AlteraImpressora" onclick="" value="Alterar">
 									
 									<br>
 
-									<input type="button" name="Excluir" onclick="document.location='RemoveImpressora'" value="Excluir">
+									<input type="submit" name="Excluir" formaction="RemoveImpressora" onclick="alert('Tem certeza que deseja excluir?')" value="Excluir">
 									
 									<br>
 

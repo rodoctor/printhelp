@@ -21,7 +21,9 @@ import java.util.List;
 	  } 
 	  
 	  public void adiciona(Impressora impressora) {//Metodo que adiciona registros no BD
-	    String sql = "insert into impressora " + "(numeroSerie,marca,modelo)" +  " values (?,?,?)";
+	    String sql = "insert into impressora " 
+	    		+ "(numeroSerie,marca,modelo)" 
+	    		+  " values (?,?,?)";
 	    try {
 	        // prepared statement para inserção
 	        PreparedStatement stmt = connection.prepareStatement(sql);
@@ -37,8 +39,34 @@ import java.util.List;
 	        throw new RuntimeException(e);}
 	    }
 
+	  public List<Impressora> consulta (String numero) throws SQLException{           
+		try {  
+			List<Impressora> impressoras = new ArrayList<Impressora>();
+			String query = " SELECT marca, modelo FROM impressora WHERE numeroSerie = ?"; 
+        	PreparedStatement stmt = this.connection.prepareStatement(query); 
+  
+            stmt.setString(1, numero);  
+            ResultSet rs = stmt.executeQuery();  
+    	    while (rs.next()) {
+    		       // criando o objeto Impressora
+    		       Impressora impressora = new Impressora();
+    		       impressora.setMarca(rs.getString("marca"));
+    		       impressora.setModelo(rs.getString("modelo"));
+    		    
+    		       // adiciona o impressora à lista de impressoras
+    		       impressoras.add(impressora);
+    		      /* System.out.println(rs.getString("marca"));
+    		       System.out.println(rs.getString("modelo"));*/
+    	    }
+    	    stmt.close();
+    		return impressoras;
+        } catch (SQLException e) {
+        throw new RuntimeException(e);
+        }
+      }
 	  
-	  public void getlista() throws SQLException{//Metodo que lista registros do DB
+	  
+	  /*public void getlista() throws SQLException{//Metodo que lista registros do DB
 	    // impressoras: array armazena a lista de registros 
 	    List<Impressora> impressoras = new ArrayList<Impressora>();
 	    PreparedStatement stmt = this.connection.prepareStatement("select * from impressora");
@@ -53,7 +81,7 @@ import java.util.List;
 	    
 	       // adiciona o impressora à lista de impressoras
 	       impressoras.add(impressora);}
-	    }
+	    }*/
 	    public void remove(Impressora impressora) {//Metodo que remove registros do BD
 	        try {
 	            PreparedStatement stmt = connection.prepareStatement("delete from impressora where numeroSerie=?");
