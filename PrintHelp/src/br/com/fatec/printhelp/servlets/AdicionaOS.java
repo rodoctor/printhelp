@@ -10,7 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
+
 
 import br.com.fatec.printhelp.dao.OrdemServicoDao;
 import br.com.fatec.printhelp.model.OrdemServico;
@@ -29,17 +30,47 @@ public class AdicionaOS extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException {
             response.setContentType("text/html;charset=UTF-8");
         
-    HttpSession session = request.getSession(); //Objeto para sessão
+    //HttpSession session = request.getSession(); //Objeto para sessão
     //Lista do tipo ordemServico, que armazena a requisição na sessão
     //List<OrdemServico>  lista = (ArrayList<OrdemServico>) session.getAttribute("minhaLista");   
-
+    	OrdemServicoDao dao= new OrdemServicoDao();
+    	String data, hora;
+    	//int hora_aux;
     	//Pega os valores dos inputs e seta na instancia do obejto i 
         OrdemServico o = new OrdemServico();
-        /*o.setNumero(request.getParameter(serie));
-        o.setMarca(request.getParameter("marca"));
-        o.setModelo(request.getParameter("modelo"));*/
-        OrdemServicoDao dao= new OrdemServicoDao();
-        dao.adiciona(o); //chamada do metodo adiciona da clase dao
+        o.setProblema(request.getParameter("problema"));
+        o.setDescricaoProblema(request.getParameter("descricao"));
+        
+        //insere data atual
+        data = dao.pegaData();
+        o.setDataAbertura(data);
+        //============================================
+        
+        //insere hora atual
+        //hora = "190000";
+        //hora = String.valueOf(dao.pegaHora());//converte para string
+        hora = dao.pegaHora();
+        o.setHoraAbertura(Integer.parseInt(hora)); // converte e seta a hora
+        //======================================================
+        /*o.setDataFechamento("");
+        o.setHoraFechamento(200000);
+        o.setSolucao("teste");*/
+
+        //insere tempoSla
+        int tempo = 180;
+        o.setTempoSla(tempo);
+        //=====================================================
+        o.setNumeroserie(request.getParameter("impressora"));
+        
+        //insere cnpj
+        //String cnpj = request.getParameter("cliente");
+        o.setCnpj(Long.parseLong(request.getParameter("cliente")));
+        //=====================================================
+        
+        //insere funcionario
+        //String codigo = (request.getParameter("tecnico"));
+        o.setCod_funcionario(Integer.parseInt(request.getParameter("tecnico")));
+        dao.adiciona(o); //chamada do metodo adiciona da classe dao
        // lista.add(o); //adiciona os valores dos inputs na lista
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("ordemServico.jsp");  

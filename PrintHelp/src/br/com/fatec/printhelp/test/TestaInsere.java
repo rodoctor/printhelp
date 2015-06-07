@@ -4,8 +4,10 @@ import br.com.fatec.printhelp.model.*;
 import br.com.fatec.printhelp.dao.*;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+//import java.sql.Date;
 
 /**
  *
@@ -35,40 +37,41 @@ public class TestaInsere {
     	f.setSenha("admin");
     	dao.adiciona(f);*/
     	
-    	Impressora i = new Impressora();
+    	/*Impressora i = new Impressora();
     	ImpressoraDao dao = new ImpressoraDao();
     	i.setNumeroSerie("729X002");
     	i.setMarca("Lexmark");
     	i.setModelo("E460");
-    	dao.adiciona(i);
+    	dao.adiciona(i);*/
     	
-    	/*OrdemServico o = new OrdemServico();
+    	OrdemServico o = new OrdemServico();
     	OrdemServicoDao dao = new OrdemServicoDao();
-    	o.setNumero(1);
+    	//o.setNumero(2);
     	o.setProblema("Papel atolado");
     	o.setDescricaoProblema("Papel atolou na porta de saída");
     	
-    	Calendar dta = Calendar.getInstance();
-    	DateFormat fdta = DateFormat.getDateInstance();
-    	dta.set(2015, Calendar.JUNE, 04);
+    	//Pega data atual e formata para o BD
+    	Calendar d = Calendar.getInstance();
+    	Date data = d.getTime();
+    	SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+    	String dta = f.format(data);
+    	o.setDataAbertura(dta);
+    	//======================================================
     	
-    	o.setDataAbertura(fdta.format(dta));
-    	o.setDataAbertura("2015-06-04");
-    	o.setHoraAbertura(1630);
-    	
-    	Calendar dtf = Calendar.getInstance();
-    	DateFormat fdtf = DateFormat.getDateInstance();
-    	dtf.set(2015, Calendar.JUNE, 04);
-    	
-    	o.setDataFechamento(fdtf.format(dtf));
-    	o.setDataFechamento("2015-06-04");
-    	o.setHoraFechamento(1700);
+    	//Pega hora atual e formata para o BD
+    	SimpleDateFormat h = new SimpleDateFormat("HHmmss");
+    	String hora_ab = h.format(data);
+    	int hora_abertura = Integer.parseInt(hora_ab);
+    	o.setHoraAbertura(hora_abertura);
+    	//==================================================
+    	o.setDataFechamento(dta);
+    	o.setHoraFechamento(hora_abertura);
     	o.setSolucao("Retirado o papel");
     	o.setTempoSla(180);
-    	o.setNumeroserie("7X20LB");
+    	o.setNumeroserie("7X20L1");
     	o.setCnpj(3478567733L);
     	o.setCod_funcionario(1);
-    	dao.adiciona(o);*/
+    	dao.adiciona(o);
     }
 }
 

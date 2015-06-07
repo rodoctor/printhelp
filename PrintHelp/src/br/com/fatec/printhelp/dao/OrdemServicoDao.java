@@ -4,11 +4,13 @@ import br.com.fatec.printhelp.jdbc.ConnectionFactory;
 import br.com.fatec.printhelp.model.OrdemServico;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 	/**
@@ -24,25 +26,25 @@ import java.util.List;
 	  
 	  public void adiciona(OrdemServico ordemServico) {//Metodo que adiciona registros no BD
 	    String sql = "insert into ordemServico "
-	    		+ "(numero,problema,descricaoProblema,dataAbertura,horaAbertura,dataFechamento,"
+	    		+ "(problema,descricaoProblema,dataAbertura,horaAbertura,dataFechamento,"
 	    		+ "horaFechamento,solucaoProblema,tempoSla,numeroSerie,cnpj,cod_funcionario)"
-	    		+  " values (?,?,?,?,?,?,?,?,?,?,?,?)";
+	    		+  " values (?,?,?,?,?,?,?,?,?,?,?)";
 	    try {
 	        // prepared statement para inserção
 	        PreparedStatement stmt = connection.prepareStatement(sql);
 	        // seta os valores
-	        stmt.setInt(1,ordemServico.getNumero());
-	        stmt.setString(2,ordemServico.getProblema());
-	        stmt.setString(3,ordemServico.getDescricaoProblema());
-	        stmt.setString(4,ordemServico.getDataAbertura());
-	        stmt.setInt(5,ordemServico.getHoraAbertura());
-	        stmt.setString(6,ordemServico.getDataFechamento());
-	        stmt.setInt(7,ordemServico.getHoraFechamento());
-	        stmt.setString(8,ordemServico.getSolucao());
-	        stmt.setInt(9,ordemServico.getTempoSla());
-	        stmt.setString(10,ordemServico.getNumeroserie());
-	        stmt.setLong(11,ordemServico.getCnpj());
-	        stmt.setInt(12,ordemServico.getCod_funcionario());
+	        //stmt.setInt(1,ordemServico.getNumero());
+	        stmt.setString(1,ordemServico.getProblema());
+	        stmt.setString(2,ordemServico.getDescricaoProblema());
+	        stmt.setString(3,ordemServico.getDataAbertura());
+	        stmt.setInt(4,ordemServico.getHoraAbertura());
+	        stmt.setString(5,ordemServico.getDataFechamento());
+	        stmt.setInt(6,ordemServico.getHoraFechamento());
+	        stmt.setString(7,ordemServico.getSolucao());
+	        stmt.setInt(8,ordemServico.getTempoSla());
+	        stmt.setString(9,ordemServico.getNumeroserie());
+	        stmt.setLong(10,ordemServico.getCnpj());
+	        stmt.setInt(11,ordemServico.getCod_funcionario());
 	        // executa
 	        stmt.execute();
 	        stmt.close();
@@ -104,10 +106,31 @@ import java.util.List;
 	            stmt.setString(9,ordemServico.getNumeroserie());
 	            stmt.setLong(10,ordemServico.getCnpj());
 	            stmt.setInt(11,ordemServico.getCod_funcionario());
+	            stmt.setInt(12,ordemServico.getNumero());
 	            stmt.execute();
 	         }
 	         catch (SQLException e) {
 	         throw new RuntimeException(e);
 	         }
 	       }
+	      
+	      public String pegaData(){
+	    	//Pega data atual e formata para o BD
+	      	Calendar d = Calendar.getInstance();
+	      	Date data = d.getTime();
+	      	SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+	      	String dta = f.format(data);
+			return dta;
+	      }
+	      
+	      //public int pegaHora(){
+	      public String pegaHora(){
+	    	//Pega hora atual e formata para o BD
+	      	Calendar d = Calendar.getInstance();
+	      	Date data = d.getTime();
+	      	SimpleDateFormat h = new SimpleDateFormat("HHmmss");
+	      	String hora_ab = h.format(data);
+	      	//int hora_abertura = Integer.parseInt(hora_ab);
+			return hora_ab;
+	      }
 	    }
