@@ -73,7 +73,7 @@ public class AdicionaOS extends HttpServlet {
         dao.adiciona(o); //chamada do metodo adiciona da classe dao
        // lista.add(o); //adiciona os valores dos inputs na lista
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("ordemServico.jsp");  
+        RequestDispatcher dispatcher = request.getRequestDispatcher("abrirOS.jsp");  
         dispatcher.forward(request, response);
     }
     	

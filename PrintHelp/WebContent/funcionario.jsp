@@ -16,98 +16,95 @@
 	<div id="site">
 
 		<!-- === CABEÇALHO === -->
-		<header>
-			<div id="topo">
-					<figure id="logo">
-						<img src="img/logo_branco.png" alt="Logotipo PrintHelp">
-					</figure>
-			</div>
-		</header>
+<header>
+	<div id="topo">
+			<figure id="logo">
+				<img src="img/logo_branco.png" alt="Logotipo PrintHelp">
+			</figure>
+	</div>
+</header>
 
-		<section id="conteudo">
-			
-			<!-- Menu Lateral -->
-			<nav id="menu">
-				<ul>
-					<li><a href="cliente.html">Cadastro de Cliente</a></li>
-					<li><a href="funcionario.html">Cadastro de Funcionário</a></li>
-					<li><a href="impressora.html">Cadastro de Impressora</a></li>
-					<li><a href="os.html">Administração de O.S.</a></li>
-					<li><a href="relatorio.html">Relatório de O.S.</a></li>
-					<li><a href="index.html">Sair</a></li>
-				</ul>
-			</nav>
+<section id="conteudo">
+	
+	<!-- Menu Lateral -->
+<nav id="menu">
+	<ul>
+		<li><a href="cliente.jsp">Cadastro de Cliente</a></li>
+		<li><a href="funcionario.jsp">Cadastro de Funcionário</a></li>
+		<li><a href="impressora.jsp">Cadastro de Impressora</a></li>
+		<li><a href="os.jsp">Administração de O.S.</a></li>
+		<li><a href="relatorio.jsp">Relatório de O.S.</a></li>
+		<li><a href="index.jsp">Sair</a></li>
+	</ul>
+</nav>
 
-			<div id="divFormulario">
-				<!-- Inicio Formulário -->
-				<form id="formulario" action="" method="POST">														
-									<label for="codigo">
-									<b>Codigo do Funcionario</b></label><br>
-									<input type="text" id="codigo" name="codigo"/>
-									</label><br>
+<div id="divFormulario">
+	<!-- Inicio Formulário -->
+	<form id="formulario" action="AdicionaFuncionario" method="POST">														
+						<label for="codigo">
+						<b>Codigo do Funcionario</b></label><br>
+						<input type="text" id="codigo" name="codigo"/>
+						</label><br>
 
-									<label for="nome">
-										<b>Nome do Funcionário</b><br>
-										<input type="text" id="nome" name="nome"/>
-									</label><br>
-
-									<label for="cargo">
-										<b>Cargo do Funcionário</b><br>
-										<select id="cargo" name="cargo">
-										<option>Opção 1</option>
-										<option>Opção 2</option>
-										</select>
-									</label><br>
-					
-									<label for="email">
-										<b>Email</b><br>
-										<input type="text" id="email" name="email"/>
-									</label><br>
-
-									<label for="senha">
-										<b>Senha</b><br>
-										<input type="password" id="senha" name="senha"/>
-									</label><br>
-
-									<label for="administrador">
-										<b>Administrador</b><br>
-										<input type="radio" name="administrador" value="sim" checked>Sim <input type="radio" name="administrador" value="nao">Não
-									</label><br>
-
-									<label for="telefone">
-										<b>Telefone</b><br>
-										<input type="text" id="telefone" name="telefone"/><br>
-									</label><br>
-
-																	
-		<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
-									<br>
-									
-									<input type="button" name="Cadastrar"onclick="alert('Hello World!');" value="Cadastrar">
+						<label for="nome">
+							<b>Nome do Funcionário</b><br>
+							<input type="text" id="nome" name="nome"/>
+						</label><br>
 		
-									<br>
+						<label for="cargo">
+							<b>Cargo</b><br>
+							<input type="text" id="cargo" name="cargo"/>
+						</label><br>
+						
+						<label for="email">
+							<b>Email</b><br>
+							<input type="text" id="email" name="email"/>
+						</label><br>
 
-									
-									<input type="button" name="Consultar" onclick="alert('Hello World!');" value="Consultar">
-									
-									<br>
+						<label for="senha">
+							<b>Senha</b><br>
+							<input type="password" id="senha" name="senha"/>
+						</label><br>
 
-									<input type="button" name="Alterar" onclick="alert('Hello World!');" value="Alterar">
-									
-									<br>
+						<label for="administrador">
+							<b>Administrador</b><br>
+							<input type="radio" name="administrador" value="sim" checked>Sim <input type="radio" name="administrador" value="nao">Não
+						</label><br>
 
-									<input type="button" name="Excluir" onclick="alert('Hello World!');" value="Excluir">
-									
-									<br>
+						<label for="telefone">
+							<b>Telefone</b><br>
+							<input type="text" id="telefone" name="telefone"/><br>
+						</label><br>
 
-									<!-- BOTAO TESTE SUBMIT -->
-									<input type="button" value="Validar" id="validar" onclick="fCodigo();fNome();fEmail();fSenha();fTelefone()">
-									<!-- FINAL BTN TESTES -->
+														
+<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
+						<br>
+						
+						<input type="submit" name="Cadastrar" onclick="alert('Hello World!');" value="Cadastrar">
 
-		<!-- FINAL DE BOTÕES ======================================-->
-				</form>
-			</div> <!--Final div Formulário-->
-		</section> <!-- Final #Conteudo -->
+						<br>
+
+						
+						<input type="submit" name="Consultar" onclick="alert('Hello World!');" value="Consultar">
+						
+						<br>
+
+						<input type="submit" name="Alterar" onclick="alert('Hello World!');" value="Alterar">
+						
+						<br>
+
+						<input type="submit" name="Excluir" onclick="alert('Hello World!');" value="Excluir">
+						
+						<br>
+
+						<!-- BOTAO TESTE SUBMIT -->
+						<input type="button" value="Validar" id="validar" onclick="fCodigo();fNome();fEmail();fSenha();fTelefone()">
+						<!-- FINAL BTN TESTES -->
+
+<!-- FINAL DE BOTÕES ======================================-->
+	</form>
+</div> <!--Final div Formulário-->
+</section> <!-- Final #Conteudo -->
 
 		<footer id="rodape">
 			<p>Equipe PrintHelp de Desenvolvimento  - 2015</p>

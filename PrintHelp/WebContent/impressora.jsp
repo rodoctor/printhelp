@@ -1,5 +1,10 @@
+<%@page import="javax.management.modelmbean.RequiredModelMBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<jsp:useBean id="impressora" class= "br.com.fatec.printhelp.model.Impressora"/>
+<jsp:useBean id="dao" class= "br.com.fatec.printhelp.dao.ImpressoraDao"/>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -39,7 +44,7 @@
 
 			<div id="divFormulario">
 				<!-- Inicio Formulário -->
-				<form id="formulario" action="AdicionaImpressora?cmd=cadastrar" method="POST">
+				<form id="formulario" action="ConsultaImpressora" method="POST">
 							
 						<label name="impressorasCadastradas">
 							Impressoras Cadastradas</label><br>
@@ -47,24 +52,23 @@
 								<option>Opção 1</option>
 								<option>Opção 2</option>
 							</select><br><br>
-
+							
 									<label for="serie">
 									<b>Numero de Série</b></label><br>
-									<input type="text" id="serie" name="serie"/>
+									<input type="text" id="serie" name="serie" value="<%= request.getAttribute("serie") %>"/>
 									</label><br>
 
 									<label name="marca">
 										<b>Marca da Impressora</b><br>
-										<input type="text" id="marca" name="marca"/>
+										<input type="text" id="marca" name="marca" value="<%= request.getAttribute("marca") %>"/>
 									</label><br>
 
 									<label name="modelo">
 										<b>Modelo da Impressora</b><br>
-										<input type="text" id="modelo" name="modelo"/>
-									</label><br>
-
-															
+										<input type="text" id="modelo" name="modelo" value="<%= request.getAttribute("modelo") %>"/>
 										
+									</label><br>						
+							
 		<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
 									<br>
 									

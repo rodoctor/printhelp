@@ -39,13 +39,13 @@ import java.util.List;
 	        throw new RuntimeException(e);}
 	    }
 
-	  public List<Impressora> consulta (String numero) throws SQLException{           
+	  /*public List<Impressora> consulta (Impressora numero) throws SQLException{           
 		try {  
 			List<Impressora> impressoras = new ArrayList<Impressora>();
 			String query = " SELECT marca, modelo FROM impressora WHERE numeroSerie = ?"; 
         	PreparedStatement stmt = this.connection.prepareStatement(query); 
   
-            stmt.setString(1, numero);  
+            stmt.setString(1, numero.getNumeroSerie()); 
             ResultSet rs = stmt.executeQuery();  
     	    while (rs.next()) {
     		       // criando o objeto Impressora
@@ -55,15 +55,59 @@ import java.util.List;
     		    
     		       // adiciona o impressora à lista de impressoras
     		       impressoras.add(impressora);
-    		      /* System.out.println(rs.getString("marca"));
-    		       System.out.println(rs.getString("modelo"));*/
+    		       System.out.println(rs.getString("marca"));
+    		       System.out.println(rs.getString("modelo"));
     	    }
     	    stmt.close();
     		return impressoras;
         } catch (SQLException e) {
         throw new RuntimeException(e);
         }
-      }
+      }*/
+	  
+	  public Impressora consulta (Impressora impressora) throws SQLException{           
+			try {  
+				//List<Impressora> impressoras = new ArrayList<Impressora>();
+				String query = " SELECT marca, modelo FROM impressora WHERE numeroSerie = ?"; 
+	        	PreparedStatement stmt = this.connection.prepareStatement(query); 
+	  
+	            stmt.setString(1, impressora.getNumeroSerie()); 
+	            ResultSet rs = stmt.executeQuery();  
+	    	    if (rs.next()) {
+	    		       impressora.setMarca(rs.getString("marca"));
+	    		       impressora.setModelo(rs.getString("modelo"));
+	    	    }
+	    	    stmt.close();
+	    		return impressora;
+	        } catch (SQLException e) {
+	        throw new RuntimeException(e);
+	        }
+	      }
+	  
+	  
+	  public Impressora consulta (String numeroSerie) throws SQLException{           
+			try {  
+				//List<Impressora> impressoras = new ArrayList<Impressora>();
+				String query = " SELECT marca, modelo FROM impressora WHERE numeroSerie = ?"; 
+	        	PreparedStatement stmt = this.connection.prepareStatement(query); 
+	  
+	        	Impressora impressora = new Impressora();
+	        	
+	            stmt.setString(1, numeroSerie); 
+	            ResultSet rs = stmt.executeQuery();  
+	    	    if (rs.next()) {
+	    	    	   impressora.setNumeroSerie(numeroSerie);
+	    		       impressora.setMarca(rs.getString("marca"));
+	    		       impressora.setModelo(rs.getString("modelo"));
+	    	    }
+	    	    stmt.close();
+	    		return impressora;
+	        } catch (SQLException e) {
+	        throw new RuntimeException(e);
+	        }
+	      }
+	  
+	  
 	  
 	  
 	  /*public void getlista() throws SQLException{//Metodo que lista registros do DB

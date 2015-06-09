@@ -29,12 +29,12 @@
 			<!-- Menu Lateral -->
 			<nav id="menu">
 				<ul>
-					<li><a href="cliente.html">Cadastro de Cliente</a></li>
-					<li><a href="funcionario.html">Cadastro de Funcionário</a></li>
-					<li><a href="impressora.html">Cadastro de Impressora</a></li>
-					<li><a href="os.html">Administração de O.S.</a></li>
-					<li><a href="relatorio.html">Relatório de O.S.</a></li>
-					<li><a href="index.html">Sair</a></li>
+					<li><a href="cliente.jsp">Cadastro de Cliente</a></li>
+					<li><a href="funcionario.jsp">Cadastro de Funcionário</a></li>
+					<li><a href="impressora.jsp">Cadastro de Impressora</a></li>
+					<li><a href="os.jsp">Administração de O.S.</a></li>
+					<li><a href="relatorio.jsp">Relatório de O.S.</a></li>
+					<li><a href="index.jsp">Sair</a></li>
 				</ul>
 			</nav>
 

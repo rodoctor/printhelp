@@ -12,5 +12,7 @@
 	<classpathentry kind="lib" path="C:/Users/Mr/Desktop/apache-tomcat-7.0.62/lib/mysql-connector-java-3.1.14-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mr/Desktop/apache-tomcat-7.0.62/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mr/Desktop/apache-tomcat-7.0.62/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mr/Desktop/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mr/Desktop/taglibs-standard-jstlel-1.2.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
