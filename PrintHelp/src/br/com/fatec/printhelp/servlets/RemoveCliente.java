@@ -1,8 +1,6 @@
 package br.com.fatec.printhelp.servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,16 +10,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import br.com.fatec.printhelp.dao.ImpressoraDao;
-import br.com.fatec.printhelp.model.Impressora;
+import br.com.fatec.printhelp.dao.ClienteDao;
+import br.com.fatec.printhelp.model.Cliente;
 
 /**
- * Servlet implementation class RemoveImpressora
+ * Servlet implementation class RemoveCliente
  */
-@WebServlet("/RemoveImpressora")
-public class RemoveImpressora extends HttpServlet {
+@WebServlet("/RemoveCliente")
+public class RemoveCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -32,15 +29,15 @@ public class RemoveImpressora extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
         
    // HttpSession session = request.getSession(); 
-  //  List<Impressora>  lista = (ArrayList<Impressora>) session.getAttribute("minhaLista");   
+  //  List<Cliente>  lista = (ArrayList<Cliente>) session.getAttribute("minhaLista");   
 
-        Impressora i = new Impressora();
-        i.setNumeroSerie(request.getParameter("serie"));
-        ImpressoraDao dao= new ImpressoraDao();
-        dao.remove(i);
+        Cliente c = new Cliente();
+        c.setCnpj(Long.parseLong(request.getParameter("cnpj")));
+        ClienteDao dao= new ClienteDao();
+        dao.remove(c);
         //lista.add(i);
                
-        RequestDispatcher dispatcher = request.getRequestDispatcher("impressora.jsp");  
+        RequestDispatcher dispatcher = request.getRequestDispatcher("cliente.jsp");  
         dispatcher.forward(request, response);
     }
 
@@ -60,7 +57,7 @@ public class RemoveImpressora extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RemoveImpressora.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RemoveCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

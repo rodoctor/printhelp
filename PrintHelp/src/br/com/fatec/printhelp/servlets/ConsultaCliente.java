@@ -2,8 +2,6 @@ package br.com.fatec.printhelp.servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,18 +13,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.fatec.printhelp.dao.ImpressoraDao;
-import br.com.fatec.printhelp.model.Impressora;
+import br.com.fatec.printhelp.dao.ClienteDao;
+import br.com.fatec.printhelp.model.Cliente;
 
 /**
- * Servlet implementation class ConsultaImpressora
+ * Servlet implementation class ConsultaCliente
  */
-@WebServlet("/ConsultaImpressora")
-public class ConsultaImpressora extends HttpServlet {
+@WebServlet("/ConsultaCliente")
+public class ConsultaCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @throws SQLException 
      * @see HttpServlet#HttpServlet()
      */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -34,23 +31,26 @@ public class ConsultaImpressora extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
         
     HttpSession session = request.getSession(); //Objeto para sessão
-    //Lista do tipo impressora, que armazena a requisição na sessão
-    //List<Impressora>  lista = (ArrayList<Impressora>) session.getAttribute("minhaLista");   
+    //Lista do tipo cliente, que armazena a requisição na sessão
+    //List<Cliente>  lista = (ArrayList<Cliente>) session.getAttribute("minhaLista");   
 
-        Impressora i = new Impressora();
-        ImpressoraDao dao= new ImpressoraDao();
-        String numero = (request.getParameter("serie"));//Pega o numeroSerie da jsp. O numeroSerie é a clausula where da consulta
+        Cliente c = new Cliente();
+        ClienteDao dao= new ClienteDao();
+        Long numero = (Long.parseLong(request.getParameter("cnpj")));//Pega o cnpj da jsp. O cnpj é a clausula where da consulta
 
-        Impressora impressoras = dao.consulta(numero);//chamada do metodo que faz a consulta
-                
-        request.setAttribute("serie", impressoras.getNumeroSerie());
-        request.setAttribute("marca", impressoras.getMarca());
-        request.setAttribute("modelo", impressoras.getModelo());
+        Cliente clientes = dao.consulta(numero);//chamada do metodo que faz a consulta
+        
+        request.setAttribute("cnpj", clientes.getCnpj());
+        request.setAttribute("nome", clientes.getNomeCliente());
+        request.setAttribute("endereco", clientes.getEndereco());
+        request.setAttribute("telefone", clientes.getTelefone());
+        request.setAttribute("email", clientes.getEmail());
+        request.setAttribute("responsavel", clientes.getResponsavel());
 
         //lista.add(i); //adiciona os valores dos inputs na lista
         
         //Pagina de resposta
-        RequestDispatcher dispatcher = request.getRequestDispatcher("impressora.jsp");  
+        RequestDispatcher dispatcher = request.getRequestDispatcher("cliente.jsp");  
         dispatcher.forward(request, response);
     }
     	
@@ -64,7 +64,7 @@ public class ConsultaImpressora extends HttpServlet {
 	        try {
 	            processRequest(request, response);
 	        } catch (ClassNotFoundException ex) {
-	            Logger.getLogger(ConsultaImpressora.class.getName()).log(Level.SEVERE, null, ex);
+	            Logger.getLogger(ConsultaCliente.class.getName()).log(Level.SEVERE, null, ex);
 	        } catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -79,11 +79,10 @@ public class ConsultaImpressora extends HttpServlet {
 	        try {
 	            processRequest(request, response);
 	        } catch (ClassNotFoundException ex) {
-	            Logger.getLogger(ConsultaImpressora.class.getName()).log(Level.SEVERE, null, ex);
+	            Logger.getLogger(ConsultaCliente.class.getName()).log(Level.SEVERE, null, ex);
 	        } catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
-
 }

@@ -49,55 +49,54 @@
 				<option>Opção 2</option>
 			</select><br><br>
 
-			
-					<label name="Nome">
-					<b>Nome do Cliente</b></label><br>
-					<input type="text" id="nome" name="nome"/>
-					</label><br>
-
 					<label name="cnpj">
 						<b>CNPJ</b><br>
-						<input type="text" id="cnpj" name="cnpj"/>
+						<input type="text" id="cnpj" name="cnpj" value="<%= request.getAttribute("cnpj") %>"/>
+					</label><br>
+
+					<label name="Nome">
+					<b>Nome do Cliente</b></label><br>
+					<input type="text" id="nome" name="nome" value="<%= request.getAttribute("nome") %>"/>
 					</label><br>
 
 					<label name="Endereco">
 						<b>Endereço</b><br>
-						<input type="text" id="endereco" name="endereco"/>
+						<input type="text" id="endereco" name="endereco" value="<%= request.getAttribute("endereco") %>"/>
 					</label><br>
 
 					<label name="Telefone">
 						<b>Telefone</b><br>
-						<input type="text" id="telefone" name="telefone"/>
+						<input type="text" id="telefone" name="telefone" value="<%= request.getAttribute("telefone") %>"/>
 					</label><br>
 					
 					<label name="Email">
 						<b>Email</b><br>
-						<input type="text" id="email" name="email"/>
+						<input type="text" id="email" name="email" value="<%= request.getAttribute("email") %>"/>
 					</label><br>
 
 					<label name="Responsavel">
 						<b>Responsável</b><br>
-						<input type="text" id="responsavel" name="responsavel"/><br>
+						<input type="text" id="responsavel" name="responsavel" value="<%= request.getAttribute("responsavel") %>"/><br>
 					</label><br>
 					
 						
 <!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
 		<br>
 		
-		<input type="submit" name="Cadastrar" onclick="alert('Hello World!');" value="Cadastrar Cliente">
+		<input type="submit" name="Cadastrar" onclick="alert('Cadastro efetuado com sucesso!');" value="Cadastrar Cliente">
 
 		<br>
 
 		
-		<input type="submit" name="Consultar" onclick="alert('Hello World!');" value="Consultar Cliente">
+		<input type="submit" formaction="ConsultaCliente" name="Consultar" onclick="" value="Consultar Cliente">
 		
 		<br>
 
-		<input type="subimit" name="Alterar" onclick="alert('Hello World!');" value="Alterar Cliente">
+		<input type="submit" formaction="AlteraCliente" name="Alterar" onclick="alert('Alteração efetuada com sucesso!');" value="Alterar Cliente">
 		
 		<br>
 
-		<input type="submit" name="Excluir" onclick="alert('Hello World!');" value="Excluir Cliente!">
+		<input type="submit" formaction="RemoveCliente" name="Excluir" onclick="alert('Tem certeza que deseja excluir?');" value="Excluir Cliente!">
 		
 		<br>
 

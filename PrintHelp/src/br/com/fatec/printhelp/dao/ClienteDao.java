@@ -3,6 +3,7 @@ package br.com.fatec.printhelp.dao;
 import br.com.fatec.printhelp.jdbc.ConnectionFactory;
 import br.com.fatec.printhelp.model.Cliente;
 import br.com.fatec.printhelp.model.Cliente;
+import br.com.fatec.printhelp.model.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -41,27 +42,26 @@ import java.util.List;
 	        throw new RuntimeException(e);}
 	    }
 
-	  public List<Cliente> consulta (String cnpj) throws SQLException{           
+	  public Cliente consulta (Long cnpj) throws SQLException{           
 			try {  
-				List<Cliente> clientes = new ArrayList<Cliente>();
+				//List<Cliente> clientes = new ArrayList<Cliente>();
 				String query = " SELECT nomeCliente,endereco,telefone,email,responsavel FROM cliente WHERE cnpj = ?"; 
 	        	PreparedStatement stmt = this.connection.prepareStatement(query); 
 	  
-	            stmt.setString(1, cnpj);  
+	        	Cliente cliente = new Cliente();
+	        	
+	            stmt.setLong(1, cnpj); 
 	            ResultSet rs = stmt.executeQuery();  
-	    	    while (rs.next()) {
-	    		       // criando o objeto Cliente
-	    		       Cliente cliente = new Cliente();
+	    	    if (rs.next()) {
+	    	    	   cliente.setCnpj(cnpj);
 	    		       cliente.setNomeCliente(rs.getString("nomeCliente"));
-	    		       //cliente.setModelo(rs.getString("modelo"));
-	    		    
-	    		       // adiciona o cliente à lista de clientes
-	    		       clientes.add(cliente);
-	    		      /* System.out.println(rs.getString("marca"));
-	    		       System.out.println(rs.getString("modelo"));*/
+	    		       cliente.setEndereco(rs.getString("endereco"));
+	    		       cliente.setTelefone(rs.getString("telefone"));
+	    		       cliente.setEmail(rs.getString("email"));
+	    		       cliente.setResponsavel(rs.getString("responsavel"));
 	    	    }
 	    	    stmt.close();
-	    		return clientes;
+	    		return cliente;
 	        } catch (SQLException e) {
 	        throw new RuntimeException(e);
 	        }
