@@ -43,57 +43,58 @@
 	<form id="formulario" action="AdicionaFuncionario" method="POST">														
 						<label for="codigo">
 						<b>Codigo do Funcionario</b></label><br>
-						<input type="text" id="codigo" name="codigo"/>
+						<input type="text" id="codigo" name="codigo" value="<%= request.getAttribute("codigo") %>"/>
 						</label><br>
 
 						<label for="nome">
 							<b>Nome do Funcionário</b><br>
-							<input type="text" id="nome" name="nome"/>
+							<input type="text" id="nome" name="nome" value="<%= request.getAttribute("nome") %>"/>
 						</label><br>
 		
 						<label for="cargo">
 							<b>Cargo</b><br>
-							<input type="text" id="cargo" name="cargo"/>
+							<input type="text" id="cargo" name="cargo" value="<%= request.getAttribute("cargo") %>"/>
 						</label><br>
 						
 						<label for="email">
 							<b>Email</b><br>
-							<input type="text" id="email" name="email"/>
+							<input type="text" id="email" name="email" value="<%= request.getAttribute("email") %>"/>
 						</label><br>
 
 						<label for="senha">
 							<b>Senha</b><br>
-							<input type="password" id="senha" name="senha"/>
+							<input type="password" id="senha" name="senha" value="<%= request.getAttribute("senha") %>"/>
 						</label><br>
 
 						<label for="administrador">
 							<b>Administrador</b><br>
-							<input type="radio" name="administrador" value="sim" checked>Sim <input type="radio" name="administrador" value="nao">Não
+							<input type="radio" name="administrador" value="sim" checked>Sim 
+							<input type="radio" name="administrador" value="não">Não
 						</label><br>
 
 						<label for="telefone">
 							<b>Telefone</b><br>
-							<input type="text" id="telefone" name="telefone"/><br>
+							<input type="text" id="telefone" name="telefone" value="<%= request.getAttribute("telefone") %>"/><br>
 						</label><br>
 
 														
 <!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
 						<br>
 						
-						<input type="submit" name="Cadastrar" onclick="alert('Hello World!');" value="Cadastrar">
+						<input type="submit" name="Cadastrar" onclick="alert('Cadastro efetuado com sucesso!');" value="Cadastrar">
 
 						<br>
 
 						
-						<input type="submit" name="Consultar" onclick="alert('Hello World!');" value="Consultar">
+						<input type="submit" formaction="ConsultaFuncionario" name="Consultar" onclick="" value="Consultar">
 						
 						<br>
 
-						<input type="submit" name="Alterar" onclick="alert('Hello World!');" value="Alterar">
+						<input type="submit" formaction="AlteraFuncionario" name="Alterar" onclick="alert('Alteração efetuada com sucesso!');" value="Alterar">
 						
 						<br>
 
-						<input type="submit" name="Excluir" onclick="alert('Hello World!');" value="Excluir">
+						<input type="submit" formaction="RemoveFuncionario" name="Excluir" onclick="alert('Tem certeza que deseja excluir?');" value="Excluir">
 						
 						<br>
 

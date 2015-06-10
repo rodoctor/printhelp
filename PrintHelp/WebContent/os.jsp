@@ -40,7 +40,7 @@
 
 			<div id="divFormulario">
 				<!-- Inicio Formulário -->
-				<form id="formulario">
+				<form id="formulario" action="ConsultaOrdemServico" method="POST">
 
 							<input type="button" id="abrir" onclick="window.location='abrirOS.jsp'" value="Abrir O.S."><br>
 							
@@ -50,42 +50,70 @@
 								<option>Opção 2</option>
 							</select><br>
 							
+							<label name="numero">
+							<b>Nº da OS</b><br>
+							<input type="text" id="numero" name="numero" value="<%= request.getAttribute("numero") %>"/>
+							
+							<label name="dataA">
+							<b>Data da Abertura</b>
+							<input type="text" id="dataA" name="dataA" value="<%= request.getAttribute("dataA") %>" disabled/><br>							
+							
 							<label name="cliente">
 							<b>Cliente</b><br>
-							<input type="text" id="cliente" name="cliente"/><br>
+							<input type="text" id="cliente" name="cliente" value="<%= request.getAttribute("cliente") %>"/>
+							
+							<label name="horaA">
+							<b>Hora da Abertura</b>
+							<input type="text" id="horaA" name="horaA" value="<%= request.getAttribute("horaA") %>" disabled/><br>
 
 							<label name="impressora">
 							<b>Impressora</b><br>
-							<input type="text" id="impressora" name="impressora"/><br>
+							<input type="text" id="impressora" name="impressora" value="<%= request.getAttribute("impressora") %>"/>
+							
+							<label name="dataF">
+							<b>Data do Fechamento</b>
+							<input type="text" id="dataF" name="dataF" value="<%= request.getAttribute("dataF") %>" disabled/><br>							
 						
 							<label name="problema">
 							<b>Problema</b><br>
-							<input type="text" id="problema" name="problema"/><br>
+							<input type="text" id="problema" name="problema" value="<%= request.getAttribute("problema") %>"/>
+							
+							<label name="horaF">
+							<b>Hora do Fechamento</b>
+							<input type="text" id="horaF" name="horaF" value="<%= request.getAttribute("horaF") %>" disabled/><br>
 
 							<label name="descricao">
 								<b>Descrição do Problema</b><br>
-								<input type="text" id="descricao" name="descricao"/>
-							</label><br>
+								<input type="text" id="descricao" name="descricao" value="<%= request.getAttribute("descricao") %>"/>
+							</label>
+							
+							<label name="sla">
+							<b>Tempo SLA</b>
+							<input type="text" id="sla" name="sla" value="<%= request.getAttribute("sla") %>"/><br>														
 							
 							<label name="solucao">
 								<b>Solução do problema</b><br>
-								<input type="text" id="solucao" name="solucao"/>
-							</label><br>							
+								<input type="text" id="solucao" name="solucao" value="<%= request.getAttribute("solucao") %>"/>
+							</label>
+							
+							<label name="cod_funcionario">
+							<b>Técnico Responsável</b>
+							<input type="text" id="cod_funcionario" name="cod_funcionario" value="<%= request.getAttribute("cod_funcionario") %>"/><br>														
 
 																
 										
 		<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
 									<br>
 																		
-									<input type="button" name="Consultar" onclick="alert('Hello World!');" value="Consultar">
+									<input type="submit" name="Consultar" onclick="" value="Consultar">
 									
 									<br>
 
-									<input type="button" name="Alterar" onclick="alert('Hello World!');" value="Alterar">
+									<input type="submit" formaction="AlteraOrdemServico" name="Alterar" onclick="alert('Alteração efetuada com sucesso');" value="Alterar">
 									
 									<br>
 
-									<input type="button" name="Fechar" onclick="alert('Hello World!');" value="Fechar">
+									<input type="submit" formaction="FechaOrdemServico" name="Fechar" onclick="alert('OS fechada com sucesso!');" value="Fechar">
 									
 									<br>
 

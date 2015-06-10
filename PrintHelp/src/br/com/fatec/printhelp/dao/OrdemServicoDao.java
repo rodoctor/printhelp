@@ -1,6 +1,7 @@
 package br.com.fatec.printhelp.dao;
 
 import br.com.fatec.printhelp.jdbc.ConnectionFactory;
+import br.com.fatec.printhelp.model.Funcionario;
 import br.com.fatec.printhelp.model.OrdemServico;
 
 import java.sql.Connection;
@@ -78,35 +79,84 @@ import java.util.List;
 	       // adiciona o ordemServico à lista de ordemServicos
 	       ordemServicos.add(ordemServico);}
 	    }
-	   /* public void remove(OrdemServico ordemServico) {//Metodo que remove registros do BD
+	  
+	  public void fecha(OrdemServico ordemServico){
+	        String sql = "update ordemServico set dataFechamento=?, horaFechamento=?,"
+	        		+ " solucaoProblema=? where numero=?";
 	        try {
-	            PreparedStatement stmt = connection.prepareStatement("delete from ordemServico where numero=?");
-	            stmt.setInt(1, ordemServico.getNumero());
+	            PreparedStatement stmt = connection.prepareStatement(sql);
+	            
+	            stmt.setString(1, ordemServico.getDataFechamento());
+	            stmt.setInt(2, ordemServico.getHoraFechamento());
+	            stmt.setString(3, ordemServico.getSolucao());
+	            stmt.setInt(4,ordemServico.getNumero());
 	            stmt.execute();
-	            stmt.close();
+	         }
+	         catch (SQLException e) {
+	         throw new RuntimeException(e);
+	         }
+	       }
+	      
+	  public OrdemServico consulta (int codigo) throws SQLException{           
+			try {  
+				//List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+				String query = " SELECT numero,problema,descricaoProblema,dataAbertura,horaAbertura,dataFechamento,horaFechamento,solucaoProblema,tempoSla,numeroSerie,cnpj,cod_funcionario FROM ordemServico WHERE numero = ?"; 
+	        	PreparedStatement stmt = this.connection.prepareStatement(query); 
+	        	OrdemServico ordemServico = new OrdemServico();
+	            stmt.setLong(1, codigo); 
+	            ResultSet rs = stmt.executeQuery();  
+	    	    if (rs.next()) {
+	    		       
+	    		       ordemServico.setNumero(rs.getInt("numero"));
+	    		       ordemServico.setProblema(rs.getString("problema"));
+	    		       ordemServico.setDescricaoProblema(rs.getString("descricaoProblema"));
+	    		       ordemServico.setDataAbertura(rs.getString("dataAbertura"));
+	    		       
+	    		       //pega horaAbertura, elimina os 2 pontos(:), converte para int e seta no objeto
+	    		       String hora = rs.getString("horaAbertura");
+	    		       hora = hora.replace( ":" , ""); //tira dois pontos 
+	    		       int horaA = Integer.parseInt(hora);
+	    		       ordemServico.setHoraAbertura(horaA);
+	    		      //================================================================
+	    		       ordemServico.setDataFechamento(rs.getString("dataFechamento"));
+	    		       
+	    		       //pega horaFechamento, elimina os 2 pontos(:), converte para int e seta no objeto
+	    		       hora = rs.getString("horaFechamento");
+	    		       hora = hora.replace( ":" , ""); //tira dois pontos 
+	    		       int horaF = Integer.parseInt(hora);
+	    		       ordemServico.setHoraFechamento(horaF);
+	    		       //==============================================================
+	    		       
+	    		       
+	    		       ordemServico.setSolucao(rs.getString("solucaoProblema"));
+	    		       ordemServico.setTempoSla(rs.getInt("tempoSla"));
+	    		       ordemServico.setNumeroserie(rs.getString("numeroSerie"));
+	    		       ordemServico.setCnpj(rs.getLong("cnpj"));
+	    		       ordemServico.setCod_funcionario(rs.getInt("cod_funcionario"));
+	    		       //ordemServico.setNumero(rs.getInt(codigo));
+
+	    	    }
+	    	    stmt.close();
+	    		return ordemServico;
 	        } catch (SQLException e) {
 	        throw new RuntimeException(e);
 	        }
-	      }*/
-	      
+	      }
+	  
 	      public void altera(OrdemServico ordemServico){
-	        String sql = "update ordemServico set problema=?, descricaoProblema=?, dataAbertura=?,"
-	        		+ "horaAbertura=?, dataFechamento=?, horaFechamento=?, solucaoProblema=?,"
-	        		+ "tempoSla=?, numeroSerie=?, cnpj=?, cod_funcionario=? where numero=?";
+	        String sql = "update ordemServico set problema=?, descricaoProblema=?,"
+	        		+ " solucaoProblema=?, tempoSla=?, numeroSerie=?, cnpj=?, cod_funcionario=? where numero=?";
 	        try {
 	            PreparedStatement stmt = connection.prepareStatement(sql);
+	            
 	            stmt.setString(1, ordemServico.getProblema());
 	            stmt.setString(2, ordemServico.getDescricaoProblema());
-	            stmt.setString(3, ordemServico.getDataAbertura());
-	            stmt.setInt(4, ordemServico.getHoraAbertura());
-	            stmt.setString(5, ordemServico.getDataFechamento());
-	            stmt.setInt(6, ordemServico.getHoraFechamento());
-	            stmt.setString(7, ordemServico.getSolucao());
-	            stmt.setInt(8, ordemServico.getTempoSla());
-	            stmt.setString(9,ordemServico.getNumeroserie());
-	            stmt.setLong(10,ordemServico.getCnpj());
-	            stmt.setInt(11,ordemServico.getCod_funcionario());
-	            stmt.setInt(12,ordemServico.getNumero());
+	            stmt.setString(3, ordemServico.getSolucao());
+	            stmt.setInt(4, ordemServico.getTempoSla());
+	            stmt.setString(5,ordemServico.getNumeroserie());
+	            stmt.setLong(6,ordemServico.getCnpj());
+	            stmt.setInt(7,ordemServico.getCod_funcionario());
+	            stmt.setInt(8,ordemServico.getNumero());
 	            stmt.execute();
 	         }
 	         catch (SQLException e) {

@@ -4,9 +4,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.fatec.printhelp.dao.ClienteDao;
+import br.com.fatec.printhelp.dao.FuncionarioDao;
 import br.com.fatec.printhelp.dao.ImpressoraDao;
+import br.com.fatec.printhelp.dao.OrdemServicoDao;
 import br.com.fatec.printhelp.model.Cliente;
+import br.com.fatec.printhelp.model.Funcionario;
 import br.com.fatec.printhelp.model.Impressora;
+import br.com.fatec.printhelp.model.OrdemServico;
 
 public class TestaConsulta {
 
@@ -26,7 +30,7 @@ public class TestaConsulta {
         //}
 */
 		
-		Cliente c = new Cliente();
+		/*Cliente c = new Cliente();
 		ClienteDao dao = new ClienteDao();
 		
 		//c.setCnpj(12345678901L);
@@ -35,7 +39,39 @@ public class TestaConsulta {
 		System.out.println(cliente.getEndereco());
 		System.out.println(cliente.getTelefone());
 		System.out.println(cliente.getEmail());
-		System.out.println(cliente.getResponsavel());
+		System.out.println(cliente.getResponsavel());*/
+		
+
+/*		FuncionarioDao dao = new FuncionarioDao();
+		
+		Funcionario funcionario = dao.consulta(3);
+		System.out.println(funcionario.getNome());
+		System.out.println(funcionario.getCargo());
+		System.out.println(funcionario.getTelefone());
+		System.out.println(funcionario.getEmail());
+		System.out.println(funcionario.getAdministrador());
+		System.out.println(funcionario.getSenha());*/
+		
+		OrdemServicoDao dao = new OrdemServicoDao();
+		
+		OrdemServico ordemServico = dao.consulta(2);
+
+		System.out.println(ordemServico.getProblema());
+		System.out.println(ordemServico.getDescricaoProblema());
+		System.out.println(ordemServico.getDataAbertura());
+		System.out.println(ordemServico.getHoraAbertura());
+		//int horaA = Integer.parseInt(ordemServico.getHoraAbertura());
+		//System.out.println(horaA);
+		System.out.println(ordemServico.getDataFechamento());
+		
+		//int horaF = Integer.parseInt(ordemServico.getHoraFechamento());
+		System.out.println(ordemServico.getHoraFechamento());
+		System.out.println(ordemServico.getTempoSla());
+		System.out.println(ordemServico.getSolucao());
+		System.out.println(ordemServico.getCnpj());
+		System.out.println(ordemServico.getNumeroserie());
+		System.out.println(ordemServico.getCod_funcionario());
+		System.out.println(ordemServico.getNumero());
 	}
 
 }

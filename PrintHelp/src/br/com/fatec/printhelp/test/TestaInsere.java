@@ -64,8 +64,8 @@ public class TestaInsere {
     	int hora_abertura = Integer.parseInt(hora_ab);
     	o.setHoraAbertura(hora_abertura);
     	//==================================================
-    	o.setDataFechamento(dta);
-    	o.setHoraFechamento(hora_abertura);
+    	//o.setDataFechamento(dta);
+    	//o.setHoraFechamento(hora_abertura);
     	o.setSolucao("Retirado o papel");
     	o.setTempoSla(180);
     	o.setNumeroserie("7X20L1");

@@ -5,7 +5,7 @@ package br.com.fatec.printhelp.model;
  */
 public class Funcionario {
     //Variaveis
-    private long cod_funcionario;
+    private int cod_funcionario;
     private String nome;
     private String cargo;
     private String telefone;
@@ -14,10 +14,10 @@ public class Funcionario {
     private String senha;
     
     //Metodos geters e seters
-	public long getCod_funcionario() {
+	public int getCod_funcionario() {
 		return cod_funcionario;
 	}
-	public void setCod_funcionario(long cod_funcionario) {
+	public void setCod_funcionario(int cod_funcionario) {
 		this.cod_funcionario = cod_funcionario;
 	}
 	public String getNome() {

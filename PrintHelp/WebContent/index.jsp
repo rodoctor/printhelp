@@ -28,12 +28,13 @@
 	<!-- Menu Lateral -->
 <nav id="menu">
 	<ul>
-		<li><a href="cliente.jsp">Cadastro de Cliente</a></li>
+		<li>Menu</li>
+<!-- 		<li><a href="cliente.jsp">Cadastro de Cliente</a></li>
 		<li><a href="funcionario.jsp">Cadastro de Funcionário</a></li>
 		<li><a href="impressora.jsp">Cadastro de Impressora</a></li>
 		<li><a href="os.jsp">Administração de O.S.</a></li>
 		<li><a href="relatorio.jsp">Relatório de O.S.</a></li>
-		<li><a href="index.jsp">Sair</a></li>
+		<li><a href="index.jsp">Sair</a></li> -->
 	</ul>
 </nav>
 
@@ -55,10 +56,6 @@
 <br>
 <input type="submit" name="Entrar"onclick="" value="Entrar">
 <br>
-<input type="submit" name="resgatar" formaction="" onclick="" value="Esqueci a senha">
-<br>
-<!-- BOTAO TESTE SUBMIT -->
-<input type="button" value="Validar" id="validar" onclick="fSerie();fMarca();fModelo();">
 <!-- FINAL BTN TESTES -->
 
 <!-- FINAL DE BOTÕES =======================================-->

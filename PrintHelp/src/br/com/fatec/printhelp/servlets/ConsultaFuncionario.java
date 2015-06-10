@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.fatec.printhelp.dao.ClienteDao;
-import br.com.fatec.printhelp.model.Cliente;
+import br.com.fatec.printhelp.dao.FuncionarioDao;
+import br.com.fatec.printhelp.model.Funcionario;
 
 /**
- * Servlet implementation class ConsultaCliente
+ * Servlet implementation class ConsultaFuncionario
  */
-@WebServlet("/ConsultaCliente")
-public class ConsultaCliente extends HttpServlet {
+@WebServlet("/ConsultaFuncionario")
+public class ConsultaFuncionario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -30,26 +30,28 @@ public class ConsultaCliente extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
             response.setContentType("text/html;charset=UTF-8");
         
-    //HttpSession session = request.getSession(); //Objeto para sessão
-    //Lista do tipo cliente, que armazena a requisição na sessão
-    //List<Cliente>  lista = (ArrayList<Cliente>) session.getAttribute("minhaLista");   
+    HttpSession session = request.getSession(); //Objeto para sessão
+    //Lista do tipo funcionario, que armazena a requisição na sessão
+    //List<Funcionario>  lista = (ArrayList<Funcionario>) session.getAttribute("minhaLista");   
 
-        ClienteDao dao= new ClienteDao();
-        Long numero = (Long.parseLong(request.getParameter("cnpj")));//Pega o cnpj da jsp. O cnpj é a clausula where da consulta
+        Funcionario c = new Funcionario();
+        FuncionarioDao dao= new FuncionarioDao();
+        int numero = (Integer.parseInt(request.getParameter("codigo")));//Pega o codigo da jsp. O codigo é a clausula where da consulta
 
-        Cliente clientes = dao.consulta(numero);//chamada do metodo que faz a consulta
+        Funcionario funcionarios = dao.consulta(numero);//chamada do metodo que faz a consulta
         
-        request.setAttribute("cnpj", clientes.getCnpj());
-        request.setAttribute("nome", clientes.getNomeCliente());
-        request.setAttribute("endereco", clientes.getEndereco());
-        request.setAttribute("telefone", clientes.getTelefone());
-        request.setAttribute("email", clientes.getEmail());
-        request.setAttribute("responsavel", clientes.getResponsavel());
+        request.setAttribute("codigo", funcionarios.getCod_funcionario());
+        request.setAttribute("nome", funcionarios.getNome());
+        request.setAttribute("cargo", funcionarios.getCargo());
+        request.setAttribute("telefone", funcionarios.getTelefone());
+        request.setAttribute("email", funcionarios.getEmail());
+        request.setAttribute("senha", funcionarios.getSenha());
+        request.setAttribute("administrador", funcionarios.getAdministrador());
 
         //lista.add(i); //adiciona os valores dos inputs na lista
         
         //Pagina de resposta
-        RequestDispatcher dispatcher = request.getRequestDispatcher("cliente.jsp");  
+        RequestDispatcher dispatcher = request.getRequestDispatcher("funcionario.jsp");  
         dispatcher.forward(request, response);
     }
     	
@@ -63,7 +65,7 @@ public class ConsultaCliente extends HttpServlet {
 	        try {
 	            processRequest(request, response);
 	        } catch (ClassNotFoundException ex) {
-	            Logger.getLogger(ConsultaCliente.class.getName()).log(Level.SEVERE, null, ex);
+	            Logger.getLogger(ConsultaFuncionario.class.getName()).log(Level.SEVERE, null, ex);
 	        } catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -78,10 +80,11 @@ public class ConsultaCliente extends HttpServlet {
 	        try {
 	            processRequest(request, response);
 	        } catch (ClassNotFoundException ex) {
-	            Logger.getLogger(ConsultaCliente.class.getName()).log(Level.SEVERE, null, ex);
+	            Logger.getLogger(ConsultaFuncionario.class.getName()).log(Level.SEVERE, null, ex);
 	        } catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
+
 }
