@@ -42,36 +42,36 @@ public class TestaConsulta {
 		System.out.println(cliente.getResponsavel());*/
 		
 
-/*		FuncionarioDao dao = new FuncionarioDao();
+		FuncionarioDao dao = new FuncionarioDao();
 		
-		Funcionario funcionario = dao.consulta(3);
+		Funcionario funcionario = dao.consulta(5);
 		System.out.println(funcionario.getNome());
 		System.out.println(funcionario.getCargo());
 		System.out.println(funcionario.getTelefone());
 		System.out.println(funcionario.getEmail());
 		System.out.println(funcionario.getAdministrador());
-		System.out.println(funcionario.getSenha());*/
+		System.out.println(funcionario.getSenha());
 		
-		OrdemServicoDao dao = new OrdemServicoDao();
-		
-		OrdemServico ordemServico = dao.consulta(2);
-
-		System.out.println(ordemServico.getProblema());
-		System.out.println(ordemServico.getDescricaoProblema());
-		System.out.println(ordemServico.getDataAbertura());
-		System.out.println(ordemServico.getHoraAbertura());
-		//int horaA = Integer.parseInt(ordemServico.getHoraAbertura());
-		//System.out.println(horaA);
-		System.out.println(ordemServico.getDataFechamento());
-		
-		//int horaF = Integer.parseInt(ordemServico.getHoraFechamento());
-		System.out.println(ordemServico.getHoraFechamento());
-		System.out.println(ordemServico.getTempoSla());
-		System.out.println(ordemServico.getSolucao());
-		System.out.println(ordemServico.getCnpj());
-		System.out.println(ordemServico.getNumeroserie());
-		System.out.println(ordemServico.getCod_funcionario());
-		System.out.println(ordemServico.getNumero());
+//		OrdemServicoDao dao = new OrdemServicoDao();
+//		
+//		OrdemServico ordemServico = dao.consulta(2);
+//
+//		System.out.println(ordemServico.getProblema());
+//		System.out.println(ordemServico.getDescricaoProblema());
+//		System.out.println(ordemServico.getDataAbertura());
+//		System.out.println(ordemServico.getHoraAbertura());
+//		//int horaA = Integer.parseInt(ordemServico.getHoraAbertura());
+//		//System.out.println(horaA);
+//		System.out.println(ordemServico.getDataFechamento());
+//		
+//		//int horaF = Integer.parseInt(ordemServico.getHoraFechamento());
+//		System.out.println(ordemServico.getHoraFechamento());
+//		System.out.println(ordemServico.getTempoSla());
+//		System.out.println(ordemServico.getSolucao());
+//		System.out.println(ordemServico.getCnpj());
+//		System.out.println(ordemServico.getNumeroserie());
+//		System.out.println(ordemServico.getCod_funcionario());
+//		System.out.println(ordemServico.getNumero());
 	}
 
 }

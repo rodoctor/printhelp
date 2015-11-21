@@ -45,8 +45,8 @@ public class ConsultaFuncionario extends HttpServlet {
         request.setAttribute("cargo", funcionarios.getCargo());
         request.setAttribute("telefone", funcionarios.getTelefone());
         request.setAttribute("email", funcionarios.getEmail());
+        request.setAttribute("administrador", funcionarios.getAdministrador());        
         request.setAttribute("senha", funcionarios.getSenha());
-        request.setAttribute("administrador", funcionarios.getAdministrador());
 
         //lista.add(i); //adiciona os valores dos inputs na lista
         

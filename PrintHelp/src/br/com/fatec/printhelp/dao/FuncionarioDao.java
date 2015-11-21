@@ -43,7 +43,7 @@ import java.util.List;
 	    }
 
 	  
-	  public void getlista() throws SQLException{//Metodo que lista registros do DB
+	  public List<Funcionario> getlista() throws SQLException{//Metodo que lista registros do DB
 	    // funcionarios: array armazena a lista de registros 
 	    List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	    PreparedStatement stmt = this.connection.prepareStatement("select * from funcionario");
@@ -62,6 +62,7 @@ import java.util.List;
 	    
 	       // adiciona o funcionario à lista de funcionarios
 	       funcionarios.add(funcionario);}
+		return funcionarios;
 	    }
 	  
 	  public Funcionario consulta (int codigo) throws SQLException{           
@@ -75,7 +76,7 @@ import java.util.List;
 	            stmt.setLong(1, codigo); 
 	            ResultSet rs = stmt.executeQuery();  
 	    	    if (rs.next()) {
-	    	    	   funcionario.setCod_funcionario(codigo);
+	    	    	   //funcionario.setCod_funcionario(rs.getInt("cod_funcionario"));
 	    		       funcionario.setNome(rs.getString("nome"));
 	    		       funcionario.setCargo(rs.getString("cargo"));
 	    		       funcionario.setTelefone(rs.getString("telefone"));
@@ -120,6 +121,31 @@ import java.util.List;
 	         throw new RuntimeException(e);
 	         }
 	       }
-	    }
+	      
+	      public Funcionario logar (String email, String senha){
+	    	  try{
+	    		  PreparedStatement stmt = connection.prepareStatement("select cod_funcionario,nome,administrador from funcionario where email=? and senha=?"); 
+	    		  stmt.setString(1, email);
+	    		  stmt.setString(2, senha);
+	    		  
+	    		  ResultSet rs = stmt.executeQuery();  
+		    	  if (rs.next()) {
+		    		  Funcionario user = new Funcionario();
+		    		  
+		    		  user.setCod_funcionario(rs.getInt("cod_funcionario"));
+		    		  user.setNome(rs.getString("nome"));
+		    		  user.setAdministrador(rs.getString("administrador"));
+		    		  user.setEmail(email);
+		    		  user.setSenha(senha);
+		    		  
+		  			return user;
+		    	  }
+		    	  stmt.close();
+	    	  }catch(SQLException e){
+	    		  throw new RuntimeException(e);
+	    	  }
+			return null;
+	      }
+}
 
 

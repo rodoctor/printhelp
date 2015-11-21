@@ -67,7 +67,7 @@ import java.util.List;
 	        }
 	      }
 	  
-	  public void getlista() throws SQLException{//Metodo que lista registros do DB
+	  public List<Cliente> getlista() throws SQLException{//Metodo que lista registros do DB
 	    // clientes: array armazena a lista de registros 
 	    List<Cliente> clientes = new ArrayList<Cliente>();
 	    PreparedStatement stmt = this.connection.prepareStatement("select * from cliente");
@@ -84,7 +84,9 @@ import java.util.List;
 	       cliente.setResponsavel(rs.getString("responsavel"));
 	       // adiciona o cliente à lista de clientes
 	       clientes.add(cliente);}
+		return clientes;
 	    }
+	  
 	    public void remove(Cliente cliente) {//Metodo que remove registros do BD
 	        try {
 	            PreparedStatement stmt = connection.prepareStatement("delete from cliente where cnpj=?");

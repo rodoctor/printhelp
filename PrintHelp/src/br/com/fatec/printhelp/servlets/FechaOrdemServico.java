@@ -51,6 +51,7 @@ public class FechaOrdemServico extends HttpServlet {
 
     
     //Pagina de resposta
+    request.setAttribute("mensagem", "OS fechada com sucesso!");
     RequestDispatcher dispatcher = request.getRequestDispatcher("os.jsp");  
     dispatcher.forward(request, response);
     }

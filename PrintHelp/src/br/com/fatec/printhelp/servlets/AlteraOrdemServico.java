@@ -49,6 +49,7 @@ public class AlteraOrdemServico extends HttpServlet {
 
     
     //Pagina de resposta
+    request.setAttribute("mensagem", "Alteração efetuada com sucesso!");
     RequestDispatcher dispatcher = request.getRequestDispatcher("os.jsp");  
     dispatcher.forward(request, response);
     }

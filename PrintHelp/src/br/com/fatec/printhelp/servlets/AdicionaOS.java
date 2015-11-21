@@ -1,6 +1,7 @@
 package br.com.fatec.printhelp.servlets;
 
 import java.io.IOException;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 //import javax.servlet.http.HttpSession;
+
 
 
 import br.com.fatec.printhelp.dao.OrdemServicoDao;
@@ -68,13 +70,19 @@ public class AdicionaOS extends HttpServlet {
         //=====================================================
         
         //insere funcionario
-        //String codigo = (request.getParameter("tecnico"));
-        o.setCod_funcionario(Integer.parseInt(request.getParameter("tecnico")));
+        String codigo = (request.getParameter("tecnico"));
+        StringTokenizer num_tecnico = new StringTokenizer(codigo);
+        codigo = num_tecnico.nextToken(); //pega apenas o codigo do funcionario, até o 1º delimitador ("")
+        
+        o.setCod_funcionario(Integer.parseInt(codigo));        
+        //o.setCod_funcionario(Integer.parseInt(request.getParameter("tecnico")));
         dao.adiciona(o); //chamada do metodo adiciona da classe dao
        // lista.add(o); //adiciona os valores dos inputs na lista
-
+  
+        request.setAttribute("mensagem", "Cadastro efetuado com sucesso!");
         RequestDispatcher dispatcher = request.getRequestDispatcher("abrirOS.jsp");  
         dispatcher.forward(request, response);
+
     }
     	
 

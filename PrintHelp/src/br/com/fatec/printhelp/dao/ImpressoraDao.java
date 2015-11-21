@@ -91,7 +91,7 @@ import java.util.List;
 	  
 	  
 	  
-	  /*public void getlista() throws SQLException{//Metodo que lista registros do DB
+	  public List<Impressora> getlista() throws SQLException{//Metodo que lista registros do DB
 	    // impressoras: array armazena a lista de registros 
 	    List<Impressora> impressoras = new ArrayList<Impressora>();
 	    PreparedStatement stmt = this.connection.prepareStatement("select * from impressora");
@@ -100,13 +100,15 @@ import java.util.List;
 	    while (rs.next()) {
 	       // criando o objeto Impressora
 	       Impressora impressora = new Impressora();
-	       impressora.setNumeroSerie(rs.getString("numreroSerie"));
+	       impressora.setNumeroSerie(rs.getString("numeroSerie"));
 	       impressora.setMarca(rs.getString("marca"));
 	       impressora.setModelo(rs.getString("modelo"));
 	    
 	       // adiciona o impressora à lista de impressoras
 	       impressoras.add(impressora);}
-	    }*/
+	    return impressoras;
+	    }
+	  
 	    public void remove(Impressora impressora) {//Metodo que remove registros do BD
 	        try {
 	            PreparedStatement stmt = connection.prepareStatement("delete from impressora where numeroSerie=?");

@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.fatec.printhelp.dao.ClienteDao;
 import br.com.fatec.printhelp.dao.OrdemServicoDao;
@@ -44,7 +45,11 @@ public class AdicionaCliente extends HttpServlet {
         c.setResponsavel(request.getParameter("responsavel"));
 
         ClienteDao dao= new ClienteDao();
-        dao.adiciona(c); //chamada do metodo adiciona da classe dao
+        dao.adiciona(c);//chamada do metodo adiciona da classe dao
+        
+        String msg = "Cliente cadastrado com sucesso!";
+        request.getParameter("msg");
+        
        // lista.add(o); //adiciona os valores dos inputs na lista
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("cliente.jsp");  

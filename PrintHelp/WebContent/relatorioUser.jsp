@@ -36,11 +36,9 @@
 	<!-- Menu Lateral -->
 	<nav id="menu">
 		<ul>
-		<li><a href="cliente.jsp">Cadastro de Cliente</a></li>
-		<li><a href="funcionario.jsp">Cadastro de Funcionário</a></li>
-		<li><a href="impressora.jsp">Cadastro de Impressora</a></li>
-		<li><a href="os.jsp">Administração de O.S.</a></li>
-		<li><a href="relatorio.jsp">Relatório de O.S.</a></li>
+
+		<li><a href="osUser.jsp">Administração de O.S.</a></li>
+		<li><a href="relatorioUser.jsp">Relatório de O.S.</a></li>
 		<li><a href="Logout">Sair</a></li>
 		</ul>
 	</nav>

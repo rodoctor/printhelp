@@ -11,10 +11,8 @@
 </head>
 
 <body>
-
-	<div id="site">
-
-		<!-- === CABEÇALHO === -->
+<div id="site">
+<!-- === CABEÇALHO === -->
 <header>
 	<div id="topo">
 			<figure id="logo">
@@ -22,10 +20,9 @@
 			</figure>
 	</div>
 </header>
-
 <section id="conteudo">
 	
-	<!-- Menu Lateral -->
+<!-- Menu Lateral -->
 <nav id="menu">
 	<ul>
 		<li>Menu</li>
@@ -41,26 +38,23 @@
 <div id="divFormulario">
 	<!-- Inicio Formulário -->
 <form id="formulario" action="Logar" method="POST">
+	<h3>${mensagem}</h3>
 
-		<label for="email">
-		<b>Email</b></label><br>
-		<input type="text" id="email" name="email"/>
-		</label><br>
+	<label for="email1">
+	<b>Email</b><br>
+	<input type="email" id="email1" name="email" maxlength="50"/>
+	</label><br>
 
-		<label name="senha">
-			<b>Senha</b><br>
-			<input type="password" id="senha" name="senha"/>
-		</label><br>				
+	<label name="senha1">
+		<b>Senha</b><br>
+		<input type="password" id="senha1" name="senha" maxlength="20"/>
+	</label><br>				
 						
-<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
-<br>
-<input type="submit" name="Entrar"onclick="" value="Entrar">
-<br>
-<!-- FINAL BTN TESTES -->
-
-<!-- FINAL DE BOTÕES =======================================-->
-
-	</form>
+	<!-- CRIAR FUNÇÕES PARA OS BOTÕES ============================-->
+	<br>
+	<input type="submit" name="Entrar"onclick="" value="Entrar">
+	<br>
+</form>
 </div> <!--Final div Formulário-->
 </section> <!-- Final #Conteudo -->
 
